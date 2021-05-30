@@ -5,7 +5,9 @@ int main () {
 
     SeqFile test("out");
     test.test();
-
+    Botella b1("1","1","1","1","1","1","1","1","1");
+    b1.toString2();
+    test.add(b1);
     return 0;
 }
 

@@ -37,10 +37,14 @@ vector<Botella> SeqFile::searchBetween(int left, int right) {
 }
 
 void SeqFile::add(Botella botella) {
-    //insertar al add al final (como un heap)
-    //buscar donde debe ir (encontrar el anterior)
-    //hacer que el next del encontrado sea el nuevo record, y que su next sea el next del encontrado
-    //si el archivo aux llega al tope, reconstruir todo
+    ofstream db("data/"+ filename + ".txt", ios::app);
+    db<<botella.id<<botella.nivel<<botella.transparencia;
+    db<<botella.faltante<<botella.turbidez<<botella.deficiente;
+    db<<botella.impura<<botella.state<<botella.next;
+    db<<endl;
+    
+    db.close();
+
 }
 
 void SeqFile::eliminate(Botella botella) {
@@ -48,25 +52,14 @@ void SeqFile::eliminate(Botella botella) {
 }
 
 void SeqFile::test() {
-    string temp1;
+    // string temp1;
     Botella temp;
     ifstream db("data/"+ filename + ".txt");
     db.seekg(6,ios::beg);
     db.get();
-    int cont=1;
-    while(getline(db,temp1)){
-        cout<<cont<<" ";
-        cout<<temp1<<endl;cont++;}
-
-    db.seekg(6,ios::beg);
-    db.get();
-    while(getline(db,temp1)){
-        cout<<cont<<" ";
-        cout<<temp1<<endl;cont++;}
-    // db>>temp;
-    // temp.toString();
-    // db.read((char*) &temp, sizeof(Botella));
-    // temp.toString();
+    temp.readBotella(db);
+    temp.toString();
+    
     db.close();
 }
 /*
