@@ -1,0 +1,15 @@
+{
+  "C_Cpp_Runner.cCompilerPath": "C:\\Strawberry\\c\\bin\\gcc.exe",
+  "C_Cpp_Runner.cppCompilerPath": "C:\\Strawberry\\c\\bin\\g++.exe",
+  "C_Cpp_Runner.debuggerPath": "C:\\Strawberry\\c\\bin\\gdb.exe",
+  "C_Cpp_Runner.makePath": "C:\\MinGW\\bin\\mingw32-make.exe",
+  "files.associations": {
+    "iostream": "cpp",
+    "iosfwd": "cpp",
+    "ostream": "cpp",
+    "*.tcc": "cpp",
+    "cstdlib": "cpp",
+    "algorithm": "cpp",
+    "functional": "cpp"
+  }
+}

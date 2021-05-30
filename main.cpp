@@ -3,11 +3,18 @@
 //#include "ISAM/ISAM.h"
 int main () {
 
-    SeqFile test("out");
-    test.test();
-    Botella b1("1","1","1","1","1","1","1","1","1");
-    b1.toString2();
+    SeqFile test("uwu");
+    //test.test();
+    Billio b1("Efrain C.","20","SI","ola","1","1");
+
+    // pair<bool,Billio> billionary = test.search(101);
+    // if(billionary.first){billionary.second.toString();}
+    // else{cout<<"NO HAY";}
+
     test.add(b1);
+
+    // test.midsearch();
+    
     return 0;
 }
 
