@@ -1,6 +1,7 @@
 #ifndef BD2_P1_LIB_H
 #define BD2_P1_LIB_H
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <utility>
 #include <vector>

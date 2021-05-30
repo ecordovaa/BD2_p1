@@ -1,6 +1,6 @@
 #ifndef BD2_P1_PLAYERS_H
 #define BD2_P1_PLAYERS_H
-#include "lib.h"
+#include "../lib.h"
 #include "index.h"
 class DartPlayer {
 private:
