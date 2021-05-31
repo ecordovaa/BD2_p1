@@ -13,6 +13,8 @@
 #include <iostream>
 #include <functional>
 #include <stdexcept>
-
+#include <cmath>
+#include <stdio.h>
+#include <stdlib.h>
 using namespace std;
 #endif //BD2_P1_LIB_H
