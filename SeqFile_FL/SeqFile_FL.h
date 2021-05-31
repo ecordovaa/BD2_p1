@@ -225,7 +225,10 @@ bool SeqFile::binarySearch(float key, ifstream &stream, Billio & billionary) {
             if(billionary.getBillions() >= key) mid++;
             stream.seekg(5 + (mid-1)*(regSize+1), ios::beg);
             billionary.readBillio(stream);
-            return false;
+
+            if(billionary.getBillions() > key ) return false;
+            else if (billionary.getBillions() == key ) return true;
+        
         }
         else if(billionary.getBillions() > key) left = mid + 1;
         else if(billionary.getBillions() < key) rigth = mid - 1;
