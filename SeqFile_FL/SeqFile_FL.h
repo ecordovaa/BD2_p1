@@ -205,74 +205,74 @@ void SeqFile::adding(Billio add) {
         // }
         Billio billion = search_a.second;
 
-        if(header!=-1)
-        {
-            if(billion.getId()==firstB().getId()  && billion.getBillions() < add.getBillions())
-            {
+        // if(header!=-1)
+        // {
+        //     if(billion.getId()==firstB().getId()  && billion.getBillions() < add.getBillions())
+        //     {
                 
-                db.seekg(9 + (header-1)*(regSize+1), ios::beg);
-                Billio temp_e;
-                temp_e.readBillio(db);
+        //         db.seekg(9 + (header-1)*(regSize+1), ios::beg);
+        //         Billio temp_e;
+        //         temp_e.readBillio(db);
                 
 
-                add.setId(header);
-                add.setNext(billion.getId());
-                add.setState(0);
-                billion.toString();
-                temp_e.toString();
-                add.toString();
+        //         add.setId(header);
+        //         add.setNext(billion.getId());
+        //         add.setState(0);
+        //         billion.toString();
+        //         temp_e.toString();
+        //         add.toString();
 
-                db.seekp(0,ios::beg);
+        //         db.seekp(0,ios::beg);
 
-                db<<temp_e.state;
+        //         db<<temp_e.state;
 
-                db.seekp(4,ios::beg);
+        //         db.seekp(4,ios::beg);
 
-                db<<add.id;
+        //         db<<add.id;
 
-                db.seekp(9 + (header-1)*(regSize+1), ios::beg);
-                db<<add.id;
-                db<<add.nombre<<add.billions<<add.country;
-                db<<add.industry<<add.state<<add.next;
-                db<<endl;
-                fileSize++;
-
-                
-                return;
+        //         db.seekp(9 + (header-1)*(regSize+1), ios::beg);
+        //         db<<add.id;
+        //         db<<add.nombre<<add.billions<<add.country;
+        //         db<<add.industry<<add.state<<add.next;
+        //         db<<endl;
+        //         fileSize++;
 
                 
-            }
+        //         return;
 
-            db.seekg(9 + (header-1)*(regSize+1), ios::beg);
-            Billio temp_e;
+                
+        //     }
+
+        //     db.seekg(9 + (header-1)*(regSize+1), ios::beg);
+        //     Billio temp_e;
             
-            temp_e.readBillio(db);
+        //     temp_e.readBillio(db);
             
             
-            add.setId(header);
-            add.setNext(billion.getNext());
-            add.setState(0);
+        //     add.setId(header);
+        //     add.setNext(billion.getNext());
+        //     add.setState(0);
 
-            billion.setNext(header);
+        //     billion.setNext(header);
 
-            db.seekp(0,ios::beg);
+        //     db.seekp(0,ios::beg);
 
-            db<<temp_e.state;
-            db.seekp(124 + 9 + (billion.getId()-1)*(regSize+1), ios::beg);
-            db<<billion.next;
+        //     db<<temp_e.state;
+        //     db.seekp(124 + 9 + (billion.getId()-1)*(regSize+1), ios::beg);
+        //     db<<billion.next;
 
             
-            db.seekp( 9 + (add.getId()-1)*(regSize+1), ios::beg);
+        //     db.seekp( 9 + (add.getId()-1)*(regSize+1), ios::beg);
 
-            db<<add.id;
-            db<<add.nombre<<add.billions<<add.country;
-            db<<add.industry<<add.state<<add.next;
-            db<<endl;
+        //     db<<add.id;
+        //     db<<add.nombre<<add.billions<<add.country;
+        //     db<<add.industry<<add.state<<add.next;
+        //     db<<endl;
 
-            fileSize++;
+        //     fileSize++;
             
-            return;
-        }
+        //     return;
+        // }
            
         // billion.toString();
         

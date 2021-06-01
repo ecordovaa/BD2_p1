@@ -20,10 +20,12 @@ int main ()
 
     // i.second.toString2();
     
-    // test.eliminate(90.6);
+    // test.eliminate(90.6); 
     // test.eliminate(50.4);
     // test.eliminate(188);
+    // test.eliminate(170);
     // test.eliminate(60.1);
+    // test.eliminate(44.5);
     // test.eliminate(170);
     // test.eliminate(62.8);
     // test.eliminate(155);
@@ -50,11 +52,16 @@ int main ()
 
     test.adding(a);
     test.adding(b);
-    // test.adding(e);
-    // test.adding(d);
-    //
-    // test.adding(f);
-    
+    test.adding(e);
+    test.adding(d);
+    test.adding(f);
+
+    test.eliminate(9);
+    test.eliminate(300);
+    test.eliminate(188);
+    test.eliminate(10);
+    test.eliminate(89.1);
+    test.adding(b);
 
     
     
