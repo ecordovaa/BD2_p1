@@ -24,7 +24,7 @@ public:
         getline(stream, temp);
         if(temp.empty()) return false;
         strcpy(this->billions, (temp.substr(54,6)).c_str());
-        pos = stream.tellg()/sizeof(Billio);
+        pos = (9 + (stream.tellg() - 1)) / (sizeof(Billio) - 6);
         return true;
     }
 

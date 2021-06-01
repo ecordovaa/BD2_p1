@@ -18,3 +18,14 @@
 #include <stdlib.h>
 using namespace std;
 #endif //BD2_P1_LIB_H
+
+float roundf(float var)
+{
+    char str[40]; 
+
+    sprintf(str, "%.2f", var);
+  
+    sscanf(str, "%f", &var); 
+  
+    return var; 
+}

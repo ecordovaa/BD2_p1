@@ -61,6 +61,8 @@ pair<bool,Billio> ISAM::search(float key)
             billionary.readBillio(mainStream);
         }
     }
+    mainStream.close();
+    indexStream.close();
     return make_pair(found && isNotDeleted, billionary);
 }
 
@@ -82,10 +84,12 @@ vector<Billio> ISAM::searchBetween(int left, int right)
         mainStream.seekg(9 + (rangeDelim.getPos())*(regSize+1), ios::beg);
         startIndex.readBillio(mainStream);
         if(startIndex.getState() == 0) out.push_back(startIndex);
-        int regpos = indexStream.tellg();
+        int regpos = (9 + (indexStream.tellg())) / (regSize + 1));
         indexStream.seekg((regpos + 1)*(regSize + 1), ios::beg);
         rangeDelim.readBillioIndex(indexStream);
     }
+    mainStream.close();
+    indexStream.close();
     return out;
  }
 
@@ -96,51 +100,52 @@ void ISAM::add(Billio newBillionary)
 
     char temp[5];
     int header {};
-    ofstream mainStream(filename, ios::in);
-    ofstream indexStream(index);
+    ifstream mainReadStream(filename, ios::in);
+    ifstream indexWriteStream(index);
     BillioIndex billioIndex;
     Billio billionary;
 
     //Obtener header
-    mainStream.seekp(0, ios::beg);
-    mainStream.read(temp,4);
+    mainReadStream.seekg(0, ios::beg);
+    mainReadStream.read(temp,4);
     sscanf(temp, "%d", &header);
 
-    if(header == -1) mainStream.seekp(0, ios::end);
+    if(header == -1) mainReadStream.seekg(0, ios::end);
     else 
     {
 
     }
 
     //Pasar archivos al nuevo registro
-    newBillionary.readBillio(mainStream);
+    newBillionary.readBillio(mainReadStream);
     newBillionary.setId(++fileSize);
     newBillionary.setNext(0); //este atributo no es usado en esta técnica
     newBillionary.setState(0);
     
     //Escritura en index
-    binarySearch(found.second.getBillions(), indexStream, billioIndex)
+    binarySearch(found.second.getBillions(), indexReadStream, billioIndex)
     Billio aux = billionary;
-    newBillionary.readBillio(index)
+    newBillionary.readBillio(indexReadStream);
 
-
+    mainReadStream.close();
+    indexReadStream.close();
 }
 
 void ISAM::eliminate(float key) 
 {
     ifstream indexStream(index);
-    Billio billioIndex;
+    BillioIndex billioIndex;
 
     //Si no encuentra el registro o ya esta eliminado, no se hace nada
-    if(!binarySearch(key, index, billioIndex)) return;
+    if(!binarySearch(key, indexStream, billioIndex)) return;
 
     Billio billionary;
-    ofstream mainStream(filename);
+    ifstream mainStream(filename);
     char temp[5];
     int header {};
 
     //Obtener header
-    mainStream.seekg(0, ios::beg)
+    mainStream.seekg(0, ios::beg);
     mainStream.read(temp,4);
     sscanf(temp, "%d", &header);
 
@@ -158,6 +163,9 @@ void ISAM::eliminate(float key)
     memset(temp, 0, 5);
     snprintf(temp, sizeof(temp), "%d", header);
     std::replace(begin(temp), end(temp)-1, '\0', ' ');
+
+    mainStream.close();
+    indexStream.close();
 }
 
 void ISAM::test() 

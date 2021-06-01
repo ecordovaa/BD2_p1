@@ -13,8 +13,9 @@ private:
     
     size_t fileSize = filesizemain;
     size_t maxaux = 10;
-    size_t sizeaux = 0;
+    
 public:
+    size_t sizeaux = 0;
     explicit SeqFile(string file): filename("data/"+ file + ".txt") {cout<<"Se guardo el archivo"<<endl;};
     pair<bool,Billio> searchmain(float key);
     pair<bool,Billio> searchaux(float key);
@@ -24,7 +25,7 @@ public:
     void eliminate(float key);
     void test();
     void midsearch();
-    
+    void sortd();
     Billio firstB();
 };
 
@@ -181,6 +182,59 @@ vector<Billio> SeqFile::searchBetween(float left, float right) {
     return out;
 }
 
+void SeqFile::sortd()
+{
+    // cont filesize
+    ifstream stream(filename);
+
+    vector<Billio> sorted = {};
+    
+    Billio first = this->firstB();
+
+    while(true)
+    {
+        if(first.getNext() == 0)
+        {
+            sorted.push_back(first);
+            break;
+        }
+        else { sorted.push_back(first); }
+        stream.seekg(9 + (first.getNext()-1)*(regSize+1), ios::beg);
+        first.readBillio(stream);
+
+    }
+    stream.close();
+
+    ofstream overdb(filename, ios::trunc);
+
+    char temp[] = "-1     1\n";
+    overdb<<temp;
+
+    
+    for(int i = 0; i < sorted.size(); ++i)
+    {
+        if(i!=sorted.size()-1)
+        {
+            sorted[i].setId(i+1);
+            sorted[i].setNext(i+2);
+        }
+        else 
+        {
+            sorted[i].setId(i+1);
+            sorted[i].setNext(0);
+        }
+        
+        overdb<<sorted[i].id;            
+        overdb<<sorted[i].nombre<<sorted[i].billions<<sorted[i].country;
+        overdb<<sorted[i].industry<<sorted[i].state<<sorted[i].next;
+        overdb<<endl;
+    }
+
+    filesizemain = this->fileSize = sorted.size();
+    overdb.close();
+}
+
+
 void SeqFile::adding(Billio add) {
     fstream db(filename, ios::in | std::fstream::out);
 
@@ -195,14 +249,16 @@ void SeqFile::adding(Billio add) {
     sscanf(temp, "%d", &header);
    
    
-    if(search_a.second.getBillions() != add.getBillions())
-     {
-        // if(maxaux==sizeaux) 
-        // {
-        //     heapify(); //mergeo
-        //     this->sizeaux = 0; 
-        //     this->add(billio);
-        // }
+    if(!search_a.first)
+    {
+        if(maxaux==sizeaux) 
+        {
+            this->sortd(); //mergeo
+            this->sizeaux = 0; 
+            this->adding(add);
+            db.close();
+            return;
+        }
         Billio billion = search_a.second;
 
         // if(header!=-1)
@@ -214,7 +270,6 @@ void SeqFile::adding(Billio add) {
         //         Billio temp_e;
         //         temp_e.readBillio(db);
                 
-
         //         add.setId(header);
         //         add.setNext(billion.getId());
         //         add.setState(0);
@@ -293,7 +348,7 @@ void SeqFile::adding(Billio add) {
             db<<add.nombre<<add.billions<<add.country;
             db<<add.industry<<add.state<<add.next;
             db<<endl;
-            fileSize++;
+            // fileSize++;
             sizeaux++;
             return;
         }
@@ -309,14 +364,14 @@ void SeqFile::adding(Billio add) {
             db<<add.id<<add.nombre<<add.billions<<add.country;
             db<<add.industry<<add.state<<add.next;
             db<<endl;
-            fileSize++;
+            // fileSize++;
             sizeaux++;
             return;
         }
     }
     else 
     {
-        cout<<"ya existe";
+        cout<<"ya existe"<<endl;
     }
     // db<<billio.nombre<<billio.billions<<billio.country;
     // db<<billio.industry<<billio.state<<billio.next;
@@ -376,7 +431,8 @@ void SeqFile::eliminate(float key)
 
             stream<<prev.second.id;
         }
-        fileSize--;
+        // fileSize--;
+        if(find.second.getId() > filesizemain) { sizeaux--;}
     }
 
     else { cout<<"No existe el Registro con la key: "<< key<<endl;}
