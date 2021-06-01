@@ -120,7 +120,7 @@ void ISAM::add(Billio newBillionary)
 
         //Buscar un registro eliminado tal que su mayor y menor consecutivos sean tambien los del nuevo registro. (Podria no encontrarse)
         binarySearch(aux.getBillions(),indexStream,billioIndex);
-        int regpos = (indexStream.tellg() /(5 + regSize-1));
+        int regpos = ((int) indexStream.tellg() /(5 + regSize-1));
         bool downCondition = true;
         bool upConditon = true;
         do 

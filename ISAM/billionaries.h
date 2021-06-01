@@ -60,6 +60,19 @@ class Billio {
             return true;
         }
 
+        bool readBillio(fstream & stream) {
+            string temp;
+            getline(stream, temp);
+            if(temp.empty()) return false;
+            strcpy(this->id, (temp.substr(0,4)).c_str());
+            strcpy(this->nombre, (temp.substr(4,50)).c_str());
+            strcpy(this->billions, (temp.substr(54,6)).c_str());
+            strcpy(this->country, (temp.substr(60,30)).c_str());
+            strcpy(this->industry, (temp.substr(90,30)).c_str());
+            strcpy(this->state, (temp.substr(120,4)).c_str());
+            return true;
+        }
+
 
         void setId(int i)
         {
