@@ -3,7 +3,7 @@
 #include "billionaries.h"
 
 int regSize = sizeof(Billio)-7;
-
+int filesizemain = 30;
 class SeqFile {
 private:
     string filename {};
@@ -11,7 +11,7 @@ private:
     void buildFile();
     bool binarySearch(float key, ifstream &stream, Billio & billionary);
     
-    size_t fileSize = 30;
+    size_t fileSize = filesizemain;
     size_t maxaux = 10;
     size_t sizeaux = 0;
 public:
@@ -20,10 +20,11 @@ public:
     pair<bool,Billio> searchaux(float key);
     pair<bool,Billio> search(float key);
     vector<Billio> searchBetween (float left, float right);
-    void add(Billio billionary);
+    void adding(Billio billionary);
     void eliminate(float key);
     void test();
     void midsearch();
+    
     Billio firstB();
 };
 
@@ -31,51 +32,98 @@ public:
 pair<bool,Billio> SeqFile::searchmain(float key) {
     ifstream db(filename);
     Billio billionary;
-    if(binarySearch(key, db, billionary)) return make_pair(true, billionary) ;
-    else {
-        // db.seekg(6 + (regSize)*fileSize, ios::beg);
-        // while(billionary.readBillio(db))
-        //      if(billionary.getBillions() == key) return billionary;
-        return make_pair(false, billionary);
-    }
-}
+    bool i = binarySearch(key, db, billionary);
 
+    return make_pair(i,billionary);
+    // if(binarySearch(key, db, billionary)) 
+    // {
+    //     db.close();
+    //     return make_pair(true, billionary) ;
+    // }
+    // else 
+    // {
+    //     // db.seekg(6 + (regSize)*fileSize, ios::beg);
+    //     // while(billionary.readBillio(db))
+    //     //      if(billionary.getBillions() == key) return billionary;
+    //     db.close();
+    //     return make_pair(false, billionary);
+    // }
+}
 pair<bool,Billio> SeqFile::searchaux(float key) {
+
     ifstream db(filename);
     Billio temp;
+    bool btemp;
+    vector<int> vtemp;
+    Billio billion;
 
-    float fcomp;
-    int  fstate;
+    float keymin = 1000, keymax = 0;
+    int idmin, idmax;
 
-    char comp[7];
-    char state[5];//
+    // float fcomp;
+    // int  fstate;
+
+    // char comp[7];
+    // char state[5];
     int cont = 0;
-
+    
     while (cont < sizeaux)
     {
-        db.seekg(5 + 54 + (fileSize + (cont))*(regSize+1), ios::beg);
-        db.read(comp,6);
-        sscanf(comp, "%f", &fcomp);
+        db.seekg(9  + (filesizemain + (cont))*(regSize+1), ios::beg);
 
-        db.seekg(5 + 120 + (fileSize + (cont))*(regSize+1), ios::beg);
-        db.read(state,4);
-        sscanf(state, "%d", &fstate);
+        billion.readBillio(db);
 
-        // cout<<fstate<<endl;
-
-        if(fcomp >= key && fstate == 0)
+        if(billion.getState()==0)
         {
-            db.seekg(5 + (fileSize + (cont))*(regSize+1), ios::beg);
-            temp.readBillio(db);
-            if(fcomp==key)
-            {
-                return make_pair(true,temp);
-            }
+            vtemp.push_back(billion.getId());
         }
         cont++;
         
-    }return make_pair(false, temp);
+    }
+    
+    if(vtemp.size()==1) 
+    {
+        db.seekg(9  + (vtemp[0]-1)*(regSize+1), ios::beg);
+        billion.readBillio(db);
+        btemp = ( key == billion.getBillions()) ? true:false;
+        return make_pair(btemp,billion);
+    }
+    else
+    {
+        for(cont = 0; cont < vtemp.size();cont++)
+        {
+            db.seekg(9  + (vtemp[cont]-1)*(regSize+1), ios::beg);
+            billion.readBillio(db);
+            // cout<<cont<<endl;
+            // billion.toString();
+            if( key < billion.getBillions() && keymin > billion.getBillions() ){ //get max near key
+                idmin = billion.getId();
+                keymin = billion.getBillions(); 
+            }
+            if(keymax < billion.getBillions() ){ //get max in the vector
+                idmax = billion.getId();
+                keymax =  billion.getBillions(); 
+            }
+            if(key == billion.getBillions()) return make_pair(true, billion);
+
+        }
+        // cout<<keymax<<" "<<idmax<<endl;
+        // cout<<keymin<<" "<<idmin<<endl;
+        if ( keymax < key)
+        {
+            db.seekg(9  + (idmax-1)*(regSize+1), ios::beg);
+            billion.readBillio(db);
+            return make_pair(false, billion);
+        }
+        else
+        {
+            db.seekg(9  + (idmin-1)*(regSize+1), ios::beg);
+            billion.readBillio(db);
+            return make_pair(false, billion);
+        } 
+    }
 }
+
 
 pair<bool,Billio> SeqFile::search(float key)
 {
@@ -86,13 +134,23 @@ pair<bool,Billio> SeqFile::search(float key)
     Billio billion;
     if(sizeaux != 0)  
     {
+        // cout<<endl<<" ola "<<endl;
+        // cout<<sizeaux<<endl;
+
         s_a = this->searchaux(key);
+
+        if( s_m.second.getBillions() < key )
+        {
+            return (s_m.second.getBillions() > s_a.second.getBillions()) ? 
+                        s_m : s_a;
+        }
+
+        
         return (s_m.second.getBillions() > s_a.second.getBillions()) ? 
                         s_a : s_m;
 
     }
-    else 
-    {
+    else{
         return s_m;
     }
 
@@ -100,44 +158,44 @@ pair<bool,Billio> SeqFile::search(float key)
 
 vector<Billio> SeqFile::searchBetween(float left, float right) {
     vector<Billio> out {};
-    float start = max(left, right);
+    ifstream stream(filename);
+    float temp, start;
+    temp = start  = max(left, right);
     float end = min(left,right);
-    Billio startIndex = searchmain(start).second;
+    Billio startIndex = search(start).second;
 
-    do {
-        ifstream stream(filename);
-        stream.seekg(5 + (startIndex.getNext()-1)*(regSize+1), ios::beg);
+    while(start >= end )
+    {
+        if(startIndex.getBillions() <= temp) out.push_back(startIndex);
+        
+        stream.seekg(9 + (startIndex.getNext()-1)*(regSize+1), ios::beg);
         startIndex.readBillio(stream);
-        if(startIndex.getBillions() >= end) out.push_back(startIndex);
-    } while(startIndex.getBillions() >= end);
-    
+        start = startIndex.getBillions();
+        if(startIndex.getNext() == 0)
+        {
+            out.push_back(startIndex);
+            break;
+        }
+    }
+
     return out;
 }
 
-void SeqFile::add(Billio add) {
+void SeqFile::adding(Billio add) {
     fstream db(filename, ios::in | std::fstream::out);
 
-    auto s_m = this->searchmain(add.getBillions()); //searchmain main
+    //auto s_m = this->searchmain(add.getBillions()); //searchmain main
 
-    pair<bool, Billio> s_a;   //searchmain aux
+    auto search_a = this->search(add.getBillions());   //search 
 
     int header {};
     char temp[5];
     db.seekg(0, ios::beg);
     db.read(temp,4);
     sscanf(temp, "%d", &header);
-    //cout<<header<<" ";
-
-    // if(header != -1)
-    // {
-
-    // }
-
-    if(sizeaux != 0)  s_a = this->searchaux(add.getBillions());
-    
-    else s_a = make_pair(false, Billio());
-    
-    if(!s_m.first && !s_a.first)
+   
+   
+    if(search_a.second.getBillions() != add.getBillions())
      {
         // if(maxaux==sizeaux) 
         // {
@@ -145,49 +203,47 @@ void SeqFile::add(Billio add) {
         //     this->sizeaux = 0; 
         //     this->add(billio);
         // }
-        Billio billion;
-        if(sizeaux != 0)
-        {
-            billion = (s_m.second.getBillions() > s_a.second.getBillions()) ? 
-                        s_a.second : s_m.second;
-        }
-        else
-        {
-            billion = s_m.second;
-        }
+        Billio billion = search_a.second;
 
         if(header!=-1)
         {
             if(billion.getId()==firstB().getId()  && billion.getBillions() < add.getBillions())
             {
-                db.seekg(5 + (header-1)*(regSize+1), ios::beg);
+                
+                db.seekg(9 + (header-1)*(regSize+1), ios::beg);
                 Billio temp_e;
                 temp_e.readBillio(db);
-                temp_e.toString();
+                
 
                 add.setId(header);
                 add.setNext(billion.getId());
                 add.setState(0);
-
+                billion.toString();
+                temp_e.toString();
                 add.toString();
 
                 db.seekp(0,ios::beg);
 
                 db<<temp_e.state;
 
-                db.seekp(5 + (header-1)*(regSize+1), ios::beg);
+                db.seekp(4,ios::beg);
+
+                db<<add.id;
+
+                db.seekp(9 + (header-1)*(regSize+1), ios::beg);
                 db<<add.id;
                 db<<add.nombre<<add.billions<<add.country;
                 db<<add.industry<<add.state<<add.next;
                 db<<endl;
                 fileSize++;
-                sizeaux++;
+
+                
                 return;
 
                 
             }
 
-            db.seekg(5 + (header-1)*(regSize+1), ios::beg);
+            db.seekg(9 + (header-1)*(regSize+1), ios::beg);
             Billio temp_e;
             
             temp_e.readBillio(db);
@@ -202,11 +258,11 @@ void SeqFile::add(Billio add) {
             db.seekp(0,ios::beg);
 
             db<<temp_e.state;
-            db.seekp(124 + 5 + (billion.getId()-1)*(regSize+1), ios::beg);
+            db.seekp(124 + 9 + (billion.getId()-1)*(regSize+1), ios::beg);
             db<<billion.next;
 
             
-            db.seekp( 5 + (add.getId()-1)*(regSize+1), ios::beg);
+            db.seekp( 9 + (add.getId()-1)*(regSize+1), ios::beg);
 
             db<<add.id;
             db<<add.nombre<<add.billions<<add.country;
@@ -214,35 +270,40 @@ void SeqFile::add(Billio add) {
             db<<endl;
 
             fileSize++;
-            sizeaux++;
             
             return;
         }
            
-        // billion.toString2();
-
+        // billion.toString();
+        
         if(billion.getId()==firstB().getId()  && billion.getBillions() < add.getBillions())
         {
-            add.setId( fileSize + sizeaux + 1);
+            cout<<" cambiando el primero"<<endl;
+            add.setId( filesizemain + sizeaux + 1);
             add.setNext(firstB().getId());
             add.setState(0);
 
-            // add.toString2();
+            
+            db.seekp(4,ios::beg);
+            db<<add.id;
+
             db.seekp(0, ios::end);
             db<<add.id;
+            
             db<<add.nombre<<add.billions<<add.country;
             db<<add.industry<<add.state<<add.next;
             db<<endl;
             fileSize++;
             sizeaux++;
+            return;
         }
         else
         {
-            add.setId(fileSize + sizeaux + 1);
+            add.setId(filesizemain + sizeaux + 1);
             add.setNext(billion.getNext());
             add.setState(0);
-            billion.setNext(fileSize + sizeaux + 1);
-            db.seekp(124 + 5 + (billion.getId()-1)*(regSize+1), ios::beg);
+            billion.setNext(filesizemain + sizeaux + 1);
+            db.seekp(124 + 9 + (billion.getId()-1)*(regSize+1), ios::beg);
             db<<billion.next;
             db.seekp(0, ios::end);
             db<<add.id<<add.nombre<<add.billions<<add.country;
@@ -250,15 +311,13 @@ void SeqFile::add(Billio add) {
             db<<endl;
             fileSize++;
             sizeaux++;
+            return;
         }
-        
-        
-
-
-
-        //stream.seekg(5 + mid*(regSize+1), ios::beg);
     }
-    else cout<<"ya existe";
+    else 
+    {
+        cout<<"ya existe";
+    }
     // db<<billio.nombre<<billio.billions<<billio.country;
     // db<<billio.industry<<billio.state<<billio.next;
     // db<<endl;
@@ -277,11 +336,8 @@ void SeqFile::eliminate(float key)
     sscanf(temp, "%d", &header);
 
 
-    // pair<bool,Billio> find_m = searchmain(key);
-    // pair<bool,Billio> find_a = searchaux(key);
-    // cout<<find_m.second.getBillions()<<endl;
-    auto find = this->search(key);
 
+    auto find = this->search(key);
 
 
     if(find.second.getBillions() == key)
@@ -299,7 +355,7 @@ void SeqFile::eliminate(float key)
         stream<<temp;
 
         
-        stream.seekp(120 + 5 + (find.second.getId()-1)*(regSize+1), ios::beg);
+        stream.seekp(120 + 9 + (find.second.getId()-1)*(regSize+1), ios::beg);
 
         stream<<find.second.state;
 
@@ -308,12 +364,19 @@ void SeqFile::eliminate(float key)
         fstream stream(filename, ios::in | std::fstream::out);
 
         auto prev = this->search(key);
-        prev.second.toString();
-        if(prev.second.getId() != firstB().getId())
+        
+        if(find.second.getId() != firstB().getId())
         {
-            stream.seekp(124 + 5 + (prev.second.getId()-1)*(regSize+1), ios::beg);
+            stream.seekp(124 + 9 + (prev.second.getId()-1)*(regSize+1), ios::beg);
             stream<<find.second.next;
         }
+        else
+        {
+            stream.seekp(4,ios::beg);
+
+            stream<<prev.second.id;
+        }
+        fileSize--;
     }
 
     else { cout<<"No existe el Registro con la key: "<< key<<endl;}
@@ -337,12 +400,12 @@ void SeqFile::test() {
 
 bool SeqFile::binarySearch(float key, ifstream &stream, Billio & billionary) {
     int left = 0;
-    int rigth = fileSize - 1;
+    int rigth = filesizemain - 1 ;
     
     while(left <= rigth) 
     {
         int mid = (left + rigth)/2;
-        stream.seekg(5 + mid*(regSize+1), ios::beg);
+        stream.seekg(9 + mid*(regSize+1), ios::beg);
         billionary.readBillio(stream);
         
 
@@ -350,7 +413,7 @@ bool SeqFile::binarySearch(float key, ifstream &stream, Billio & billionary) {
 
         else if(billionary.getBillions() > key) left = mid + 1;
         
-        //exista
+        //existe
         else if (billionary.getBillions() == key)
         {
             //existe y no eliminado
@@ -370,14 +433,14 @@ bool SeqFile::binarySearch(float key, ifstream &stream, Billio & billionary) {
     
                         while(billionary.getState()!=0)
                         {
-                            stream.seekg(5 + (temp-1)*(regSize+1), ios::beg);
+                            stream.seekg(9 + (temp-1)*(regSize+1), ios::beg);
                             billionary.readBillio(stream);
                             temp++;
                         }
                         return false;
                     }
 
-                    stream.seekg(5 + (mid-1)*(regSize+1), ios::beg);
+                    stream.seekg(9 + (mid-1)*(regSize+1), ios::beg);
                     billionary.readBillio(stream);
                     mid--;
 
@@ -390,7 +453,7 @@ bool SeqFile::binarySearch(float key, ifstream &stream, Billio & billionary) {
 
         if(mid != 0 && mid == left || mid == rigth) { 
 
-            stream.seekg(5 + (left-1)*(regSize+1), ios::beg);
+            stream.seekg(9 + (left-1)*(regSize+1), ios::beg);
             billionary.readBillio(stream);
 
             // no eliminado
@@ -408,18 +471,17 @@ bool SeqFile::binarySearch(float key, ifstream &stream, Billio & billionary) {
                     temp++;
                     if (mid==0) 
                     {
-                        cout<<"asex1";
                         //mid++;
                         while(billionary.getState()!=0)
                         {
-                            stream.seekg(5 + (temp-1)*(regSize+1), ios::beg);
+                            stream.seekg(9 + (temp-1)*(regSize+1), ios::beg);
                             billionary.readBillio(stream);
                             temp++;
                         }
                         return false;
                     }
 
-                    stream.seekg(5 + (mid-1)*(regSize+1), ios::beg);
+                    stream.seekg(9 + (mid-1)*(regSize+1), ios::beg);
                     billionary.readBillio(stream);
                     mid--;
 
@@ -440,11 +502,11 @@ bool SeqFile::binarySearch(float key, ifstream &stream, Billio & billionary) {
     {
         int mid=1;
 
-        cout<<"asex1";
+        // cout<<"asex1";
                         //mid++;
         while(billionary.getState()!=0)
         {
-            stream.seekg(5 + (mid-1)*(regSize+1), ios::beg);
+            stream.seekg(9 + (mid-1)*(regSize+1), ios::beg);
             billionary.readBillio(stream);
             mid++;
         }
@@ -456,13 +518,13 @@ bool SeqFile::binarySearch(float key, ifstream &stream, Billio & billionary) {
 void SeqFile::midsearch() {
     ifstream stream(filename);
     int left = 0;
-    int rigth = fileSize - 1;
+    int rigth = filesizemain - 1;
   
     
     int mid = ((left + rigth)/2)-1;
     Billio billionary;
     
-    stream.seekg(5 + mid*(regSize+1), ios::beg);
+    stream.seekg(9 + mid*(regSize+1), ios::beg);
 
     billionary.readBillio(stream);
     billionary.toString();
@@ -470,8 +532,22 @@ void SeqFile::midsearch() {
 }
 Billio SeqFile::firstB()
 {
-    auto i = this->search(999999);
-    return i.second;
+
+    fstream db(filename, ios::in | std::fstream::out);
+    int first {};
+    char temp[5];
+    db.seekg(4, ios::beg);
+    db.read(temp,4);
+    sscanf(temp, "%d", &first);
+    Billio tempb;
+    db.seekg(9 + (first-1)*(regSize+1), ios::beg);
+    tempb.readBillio(db);
+    db.close();
+    return tempb;
+
+
+    // auto i = search(999);
+    // return i.second;
 }
 
 #endif //BD2_P1_FL_SEQFILE_H.

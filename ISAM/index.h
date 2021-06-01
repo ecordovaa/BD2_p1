@@ -1,54 +1,63 @@
 #ifndef BD2_P1_INDEX_H
 #define BD2_P1_INDEX_H
+#include "billionaries.h"
 
 class BillioIndex {
-    char id[5];
-    Billio* address;
+public:
+    char billions [5];
+    int pos {};
+    BillioIndex(){};
 
-    BillioIndex(){}
-
-    bool createIndex(Billio billionary) {
-        id = billionary.id;
-        address = *billionary;
+    bool operator==(const BillioIndex &billioIndex) const 
+    {
+        return billions == billioIndex.billions && pos == billioIndex.pos;     
     }
 
-    //Utility
-    bool operator==(const BillioIndex &billioIndex) const {
-        return id == billioIndex.id &&
-               address == *billioIndex;     
-    }
-
-    bool operator!=(const BillioIndex &billioIndex) const {
+    bool operator!=(const BillioIndex &billioIndex) const 
+    {
         return !(billioIndex == *this);
     }
 
-    void toString(){
-        cout<<"id: "<<this->getId()<<endl;
-        cout<<"address: "<<this->
+    bool BillioIndex::readBillioIndex(ifstream& stream) 
+    {
+        string temp {};
+        getline(stream, temp);
+        if(temp.empty()) return false;
+        strcpy(this->billions, (temp.substr(54,6)).c_str());
+        pos = stream.tellg()/sizeof(Billio);
+        return true;
+    }
+
+    void toString()
+    {
+        cout<<"billions: "<<getBillions()<<endl;
+        cout<<"pos: "<<getPos()<<endl;
     }
 
     //Casting
-    int getId() {
-        int temp;
-        sscanf(this->id, "%d", &temp);
-        return temp;
-    }
-
-    float getBillions() {
+    float BillioIndex::getBillions() 
+    {
         float temp;
         sscanf(this->billions, "%f", &temp);
         return temp;
     }
 
-    void setId(int i) {
-        memset(this->id, 0, 5);
-        snprintf(this->id, sizeof(this->id), "%d", i);
-        std::replace(begin(this->id), end(this->id)-1, '\0', ' ');
+    int BillioIndex::getPos() 
+    {
+        return this->pos;   
     }
 
-    void setAddress(Billio billionary){
-        address = *billionary;
+    void BillioIndex::setBillions(float billions) 
+    {
+        memset(this->billions, 0, 5);
+        snprintf(this->billions, sizeof(this->billions), "%d", billions);
+        std::replace(begin(this->billions), end(this->billions)-1, '\0', ' ');  
     }
-}
 
-#endif //BD2_P1_INDEX_H
+    void setPos(int regpos)
+    {
+        this->pos = regpos;
+    }
+};
+
+#endif //BD2_P1_INDEX_H.
