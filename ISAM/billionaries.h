@@ -8,27 +8,20 @@ class Billio {
         char country[31]; //4
         char industry[31]; //2
         char state[5]; //0: no eliminado, -1: fin de la cadena; >0: pos logica del nextDel (Eliminados)
-        char next[5]; //Lista de ordenamiento
 
         Billio(){}
         
         Billio(char nombre[51], char billions [7],char country [31], 
         char industry[31]){
-            // strncpy(this->id, id, 5);
             strncpy(this->nombre, nombre, 51);
             strncpy(this->billions, billions, 7);
             strncpy(this->country, country, 31);
             strncpy(this->industry, industry, 31);
-            // strncpy(this->state, state, 5);
-            // strncpy(this->next, next, 5);
 
-            // std::replace(begin(this->id), end(this->id)-1, '\0', ' ');
             std::replace(begin(this->nombre), end(this->nombre)-1, '\0', ' ');
             std::replace(begin(this->billions), end(this->billions)-1, '\0', ' ');
             std::replace(begin(this->country), end(this->country)-1, '\0', ' ');
             std::replace(begin(this->industry), end(this->industry)-1, '\0', ' ');
-            // std::replace(begin(this->state), end(this->state)-1, '\0', ' ');
-            // std::replace(begin(this->next), end(this->next)-1, '\0', ' ');
         }
 
         //Utility
@@ -51,21 +44,9 @@ class Billio {
             cout<<"country: "<<this->getCountry()<<endl;
             cout<<"industry: "<<this->getIndustry()<<endl;
             cout<<"state: "<<this->getState()<<endl;
-            cout<<"next: "<<this->getNext()<<endl<<endl;
-        }
-
-        void toString2() {
-            cout<<"id: "<<this->id<<endl;
-            cout<<"nombre: "<<this->nombre<<endl;
-            cout<<"billions: "<<this->billions<<endl;
-            cout<<"country: "<<this->country<<endl;
-            cout<<"industry: "<<this->industry<<endl;
-            cout<<"state: "<<this->state<<endl;
-            cout<<"next: "<<this->next<<endl<<endl;
         }
 
         //Read from file
-
         bool readBillio(ifstream & stream) {
             string temp;
             getline(stream, temp);
@@ -76,7 +57,6 @@ class Billio {
             strcpy(this->country, (temp.substr(60,30)).c_str());
             strcpy(this->industry, (temp.substr(90,30)).c_str());
             strcpy(this->state, (temp.substr(120,4)).c_str());
-            strcpy(this->next, (temp.substr(124,4)).c_str());
             return true;
         }
 
@@ -88,12 +68,6 @@ class Billio {
             std::replace(begin(this->id), end(this->id)-1, '\0', ' ');
         }
 
-        void setNext(int i)
-        {
-            memset(this->next, 0, 5);
-            snprintf(this->next, sizeof(this->next), "%d", i);
-            std::replace(begin(this->next), end(this->next)-1, '\0', ' ');
-        }
         void setState(int i)
         {
             memset(this->state, 0, 5);
@@ -107,6 +81,7 @@ class Billio {
             sscanf(this->id, "%d", &temp);
             return temp;
         }
+
         string getNombre() {
             string temp = nombre;
             return temp;
@@ -134,9 +109,4 @@ class Billio {
             return temp;
         }
 
-        int getNext() {
-            int temp;
-            sscanf(this->next, "%d", &temp);
-            return temp;
-        }
 };

@@ -16,6 +16,7 @@
 #include <cmath>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 using namespace std;
 #endif //BD2_P1_LIB_H
 

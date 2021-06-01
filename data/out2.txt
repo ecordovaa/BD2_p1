@@ -1,42 +1,41 @@
--1     1
-1   9                                                 300.42caca                          peru                          0   41  
-2   1                                                 200.22caca                          peru                          0   3   
-3   Jeff Bezos                                        188.00United States                 Technology                    0   4   
-4   Elon Musk                                         170.00United States                 Technology                    0   5   
-5   Bernard Arnault                                   155.00France                        Consumer                      0   6   
-6   Bill Gates                                        144.00United States                 Technology                    0   7   
-7   8                                                 123.42caca                          peru                          0   8   
-8   Mark Zuckerberg                                   114.00United States                 Technology                    0   9   
-9   Warren Buffett                                    108.00United States                 Diversified                   0   10  
-10  Larry Page                                        104.00United States                 Technology                    0   11  
-11  Sergey Brin                                       101.00United States                 Technology                    0   12  
-12  12                                                100.42caca                          peru                          0   13  
-13  4                                                 100.21caca                          peru                          0   14  
-14  11                                                98.42 caca                          peru                          0   15  
-15  Larry Ellison                                     90.60 United States                 Technology                    0   16  
-16  Steve Ballmer                                     89.10 United States                 Technology                    0   17  
-17  Francoise Bettencourt Meyers                      83.90 France                        Consumer                      0   18  
-18  Amancio Ortega                                    79.30 Spain                         Retail                        0   19  
-19  Mukesh Ambani                                     74.10 India                         Energy                        0   20  
-20  Charles Koch                                      64.30 United States                 Industrial                    0   21  
-21  Julia Flesher Koch & Family                       64.30 United States                 Industrial                    0   22  
-22  Zhong Shanshan                                    63.80 China                         Diversified                   0   23  
-23  Gautam Adani                                      62.80 India                         Industrial                    0   24  
-24  Jim Walton                                        62.00 United States                 Retail                        0   25  
-25  Rob Walton                                        61.50 United States                 Retail                        0   26  
-26  Alice Walton                                      60.10 United States                 Retail                        0   27  
-27  Ma Huateng                                        58.40 China                         Technology                    0   28  
-28  MacKenzie Scott                                   57.00 United States                 Technology                    0   29  
-29  Carlos Slim                                       56.50 Mexico                        Diversified                   0   30  
-30  Francois Pinault                                  53.70 France                        Consumer                      0   31  
-31  Phil Knight & Family                              53.30 United States                 Consumer                      0   32  
-32  Michael Dell                                      50.40 United States                 Technology                    0   33  
-33  Jack Ma                                           49.60 China                         Technology                    0   34  
-34  Jacqueline Badger Mars                            44.90 United States                 Food & Beverage               0   35  
-35  John Mars                                         44.80 United States                 Food & Beverage               0   36  
-36  Zhang Yiming                                      44.50 China                         Technology                    0   37  
-37  10                                                22.42 caca                          peru                          0   38  
-38  3                                                 21.31 caca                          peru                          0   39  
-39  5                                                 10.12 caca                          peru                          0   40  
-40  6                                                 9.42  caca                          peru                          0   0   
-41  2                                                 300.21caca                          peru                          0   2   
+35  39  
+1   Jeff Bezos                                        188.00United States                 Technology                    0      2
+2   Elon Musk                                         170.00United States                 Technology                    0      3
+3   Bernard Arnault                                   155.00France                        Consumer                      0      4
+4   Bill Gates                                        144.00United States                 Technology                    0   38  
+5   Mark Zuckerberg                                   114.00United States                 Technology                    0      6
+6   Warren Buffett                                    108.00United States                 Diversified                   0      7
+7   Larry Page                                        104.00United States                 Technology                    0      8
+8   Sergey Brin                                       101.00United States                 Technology                    0   34  
+9   Larry Ellison                                     90.60 United States                 Technology                    0     10
+10  Steve Ballmer                                     89.10 United States                 Technology                    0     11
+11  Francoise Bettencourt Meyers                      83.90 France                        Consumer                      0     12
+12  Amancio Ortega                                    79.30 Spain                         Retail                        0     13
+13  Mukesh Ambani                                     74.10 India                         Energy                        0     14
+14  Charles Koch                                      64.30 United States                 Industrial                    0     15
+15  Julia Flesher Koch & Family                       64.30 United States                 Industrial                    0     16
+16  Zhong Shanshan                                    63.80 China                         Diversified                   0     17
+17  Gautam Adani                                      62.80 India                         Industrial                    0     18
+18  Jim Walton                                        62.00 United States                 Retail                        0     19
+19  Rob Walton                                        61.50 United States                 Retail                        0     20
+20  Alice Walton                                      60.10 United States                 Retail                        0     21
+21  Ma Huateng                                        58.40 China                         Technology                    0     22
+22  MacKenzie Scott                                   57.00 United States                 Technology                    0     23
+23  Carlos Slim                                       56.50 Mexico                        Diversified                   0     24
+24  Francois Pinault                                  53.70 France                        Consumer                      0     25
+25  Phil Knight & Family                              53.30 United States                 Consumer                      0     26
+26  Michael Dell                                      50.40 United States                 Technology                    0     27
+27  Jack Ma                                           49.60 China                         Technology                    0     28
+28  Jacqueline Badger Mars                            44.90 United States                 Food & Beverage               0     29
+29  John Mars                                         44.80 United States                 Food & Beverage               0     30
+30  Zhang Yiming                                      44.50 China                         Technology                    0   40  
+31  1                                                 200.22caca                          peru                          0   1   
+32  2                                                 300.21caca                          peru                          -1  31  
+33  3                                                 21.31 caca                          peru                          0   37  
+34  4                                                 100.21caca                          peru                          0   9   
+35  5                                                 10.12 caca                          peru                          32  37  
+36  6                                                 9.42  caca                          peru                          0   0   
+37  7                                                 9.48  caca                          peru                          0   36  
+38  8                                                 123.42caca                          peru                          0   5   
+39  9                                                 300.42caca                          peru                          0   31  
+40  10                                                22.42 caca                          peru                          0   33  

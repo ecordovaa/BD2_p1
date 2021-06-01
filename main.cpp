@@ -5,6 +5,7 @@ int main ()
 {
 
     SeqFile test("out2");
+    
     // test.midsearch();
 
     // pair<bool,Billio> billionary = test.search(31.5);
@@ -44,12 +45,13 @@ int main ()
     //     i3.second.toString();
 
     Billio a("1","200.22","caca", "peru");
+
     Billio b("2","300.21","caca", "peru");
     Billio c("3","21.31","caca", "peru");
-    Billio d("4","100.21","caca", "peru"); //.
-    Billio e("5","10.12","caca", "peru"); //.
+    Billio d("4","100.21","caca", "peru");
+    Billio e("5","10.12","caca", "peru"); 
     Billio f("6","9.42","caca", "peru");
-    Billio g("7","9.42","caca", "peru");
+    Billio g("7","9.48","caca", "peru");
     Billio h("8","123.42","caca", "peru");
     Billio i("9","300.42","caca", "peru");
     Billio j("10","22.42","caca", "peru");
@@ -62,20 +64,10 @@ int main ()
     // d.toString2();
     // e.toString2();
     // f.toString2();
-    cout<<test.sizeaux<<endl;
+    // cout<<test.sizeaux<<endl;
     test.adding(a);
-    cout<<test.sizeaux<<endl;
-    test.adding(a);
-    cout<<test.sizeaux<<endl;
-    test.adding(a);
-    cout<<test.sizeaux<<endl;
+    test.adding(b);
     test.adding(c);
-    cout<<test.sizeaux<<endl;
-    test.adding(c);
-    cout<<test.sizeaux<<endl;
-    test.adding(d);
-    cout<<test.sizeaux<<endl;
-    test.adding(d);
     cout<<test.sizeaux<<endl;
     test.adding(d);
     cout<<test.sizeaux<<endl;
@@ -91,17 +83,21 @@ int main ()
     cout<<test.sizeaux<<endl;
     test.adding(j);
     cout<<test.sizeaux<<endl;
-    test.adding(k);
-    cout<<test.sizeaux<<endl;
+    // test.adding(k);
+    test.eliminate(300.21);
+    test.eliminate(10.12);
+    sleep(10);
     test.adding(l);
-    cout<<test.sizeaux<<endl;
-    test.adding(a);
-    cout<<test.sizeaux<<endl;
-    test.adding(b);
-    cout<<test.sizeaux<<endl;
-    test.adding(b);
-    test.adding(b);
-    test.adding(b);
+    // cout<<test.sizeaux<<endl;
+    // test.adding(l);
+    // cout<<test.sizeaux<<endl;
+    // test.adding(a);
+    // cout<<test.sizeaux<<endl;
+    // test.adding(b);
+    // cout<<test.sizeaux<<endl;
+    // test.adding(b);
+    // test.adding(b);
+    // test.adding(b);
     // test.adding(c);
     // test.adding(d);
     // test.adding(e);
@@ -129,7 +125,7 @@ int main ()
     
 
 
-    // auto i = test.search(154);
+    // auto i = test.search(200);
     // i.second.toString();
 
     // auto testSearchBetween = test.searchBetween(250 , 170);

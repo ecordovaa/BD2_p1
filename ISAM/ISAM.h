@@ -2,7 +2,7 @@
 #define BD2_P1_ISAM_H
 #include "index.h"
 
-int regSize = sizeof(Billio) - 7;
+int regSize = sizeof(Billio) - 6;
 int indexSize = sizeof(BillioIndex) - 2;
 
 class ISAM {
@@ -31,7 +31,7 @@ pair<bool,Billio> ISAM::search(float key)
 
     bool found = binarySearch(key, indexStream, billioIndex); 
 
-    mainStream.seekg(9 + billioIndex.getPos()*(regSize+1), ios::beg);
+    mainStream.seekg(5 + billioIndex.getPos()*(regSize+1), ios::beg);
     billionary.readBillio(mainStream);
 
     bool isNotDeleted = billionary.getState() == 0;
@@ -48,7 +48,7 @@ pair<bool,Billio> ISAM::search(float key)
             {
                 indexStream.seekg((regpos++)*(indexSize+1), ios::beg);
                 billioIndex.readBillioIndex(indexStream);
-                mainStream.seekg(9 + (billioIndex.getPos())*(regSize+1), ios::beg);
+                mainStream.seekg(5 + (billioIndex.getPos())*(regSize+1), ios::beg);
                 billionary.readBillio(mainStream);
             }
         }
@@ -57,7 +57,7 @@ pair<bool,Billio> ISAM::search(float key)
             //Buscar por arriba el menor elemento mayor al que se pidio
             indexStream.seekg((regpos--)*(regSize+1), ios::beg);
             billioIndex.readBillioIndex(indexStream);
-            mainStream.seekg(9 + (billioIndex.getPos())*(regSize+1), ios::beg);
+            mainStream.seekg(5 + (billioIndex.getPos())*(regSize+1), ios::beg);
             billionary.readBillio(mainStream);
         }
     }
@@ -84,10 +84,11 @@ vector<Billio> ISAM::searchBetween(int left, int right)
         mainStream.seekg(9 + (rangeDelim.getPos())*(regSize+1), ios::beg);
         startIndex.readBillio(mainStream);
         if(startIndex.getState() == 0) out.push_back(startIndex);
-        int regpos = (9 + (indexStream.tellg())) / (regSize + 1));
+        int regpos = (indexStream.tellg() / (5 + regSize - 1));
         indexStream.seekg((regpos + 1)*(regSize + 1), ios::beg);
         rangeDelim.readBillioIndex(indexStream);
     }
+
     mainStream.close();
     indexStream.close();
     return out;
@@ -95,40 +96,82 @@ vector<Billio> ISAM::searchBetween(int left, int right)
 
 void ISAM::add(Billio newBillionary)
 {
-    pair<bool,Billio> found = search(newBillionary.getBillions();
+    pair<bool,Billio> found = search(newBillionary.getBillions());
     if(found.first) return; //No hacer nada si ya se encuentra en el archivo
 
     char temp[5];
     int header {};
-    ifstream mainReadStream(filename, ios::in);
-    ifstream indexWriteStream(index);
-    BillioIndex billioIndex;
-    Billio billionary;
 
     //Obtener header
-    mainReadStream.seekg(0, ios::beg);
-    mainReadStream.read(temp,4);
+    ifstream mainStream(filename);
+    ifstream indexStream(index);
+    BillioIndex newIndex;
+    mainStream.seekg(0, ios::beg);
+    mainStream.read(temp,4);
     sscanf(temp, "%d", &header);
 
-    if(header == -1) mainReadStream.seekg(0, ios::end);
-    else 
-    {
+    //Escribir en heap (main). Adicionalmente, intentará buscar un registro eliminado apropiado para insertar
+    if(header == -1) mainStream.seekg(0, ios::beg);
+    else {
+        mainStream.seekg(5 + (header - 1)*(regSize - 1));
+        Billio aux;
+        BillioIndex billioIndex;
+        aux.readBillio(mainStream);
 
+        //Buscar un registro eliminado tal que su mayor y menor consecutivos sean tambien los del nuevo registro. (Podria no encontrarse)
+        binarySearch(aux.getBillions(),indexStream,billioIndex);
+        int regpos = (indexStream.tellg() /(5 + regSize-1));
+        bool downCondition = true;
+        bool upConditon = true;
+        do 
+        {
+            if(regpos != 5) 
+            {
+                BillioIndex downAux;
+                indexStream.seekg(regpos - (regSize-1) - 5 );
+                downAux.readBillioIndex(indexStream);
+                downCondition = downAux.getBillions() >= aux.getBillions();
+            }
+            if(regpos != 5 + (fileSize + 1) /(regSize-1)))
+            {
+                BillioIndex upAux;
+                indexStream.seekg(regpos + (regSize-1) + 5 );
+                upAux.readBillioIndex(indexStream);
+                upCondition = upAux.getBillions() <= aux.getBillions();
+            }
+            if(!(downCondition && upCondition))
+            {
+                if(aux.getState() == -1)
+                { 
+                    mainStream.seekg(0, ios::end);
+                    indexStream.seekg(0, ios::end);
+                    break;
+                }
+                else
+                {
+                    mainStream.seekg(5 + aux.getState()*(regSize -));
+                    aux.readBillio(mainStream);
+                }
+            }
+        } while(downCondition && upCondition || aux.getState() == -1);
+        if(downCondition && upConditon)
+        { 
+            indexStream.seekg(regpos);
+            header = aux.getState();
+            mainStream.seekg(5 + (header - 1)*(regSize - 1));
+            ofstream writeHeader(filename);
+            char newHeader[] = header +  "     \n";
+            writeHeader<<newHeader;
+        }
     }
 
-    //Pasar archivos al nuevo registro
-    newBillionary.readBillio(mainReadStream);
+    newBillionary.readBillio(mainStream);
     newBillionary.setId(++fileSize);
-    newBillionary.setNext(0); //este atributo no es usado en esta técnica
     newBillionary.setState(0);
-    
-    //Escritura en index
-    binarySearch(found.second.getBillions(), indexReadStream, billioIndex)
-    Billio aux = billionary;
-    newBillionary.readBillio(indexReadStream);
+    mainStream.close();
 
-    mainReadStream.close();
-    indexReadStream.close();
+    newIndex.readBillioIndex(indexStream);
+    indexStream.close();
 }
 
 void ISAM::eliminate(float key) 
@@ -150,7 +193,7 @@ void ISAM::eliminate(float key)
     sscanf(temp, "%d", &header);
 
     //Ir al registro a eliminar
-    mainStream.seekg(9 + (billioIndex.getPos())*(regSize+1), ios::beg);
+    mainStream.seekg(5 + (billioIndex.getPos())*(regSize+1), ios::beg);
     billionary.readBillio(mainStream);
 
     //Eliminación LIFO
