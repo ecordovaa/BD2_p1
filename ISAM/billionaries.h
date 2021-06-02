@@ -11,17 +11,21 @@ class Billio {
 
         Billio(){}
         
-        Billio(char nombre[51], char billions [7],char country [31], 
-        char industry[31]){
-            strncpy(this->nombre, nombre, 51);
-            strncpy(this->billions, billions, 7);
-            strncpy(this->country, country, 31);
-            strncpy(this->industry, industry, 31);
+        Billio(string nombre, string billions,string country, 
+        string industry){
+
+            // this->setBillions(billions);
+
+            strncpy(this->nombre, nombre.c_str(), 51); 
+            strncpy(this->billions, billions.c_str(), 7);     
+            strncpy(this->country, country.c_str(), 31);
+            strncpy(this->industry, industry.c_str(), 31);
 
             std::replace(begin(this->nombre), end(this->nombre)-1, '\0', ' ');
             std::replace(begin(this->billions), end(this->billions)-1, '\0', ' ');
             std::replace(begin(this->country), end(this->country)-1, '\0', ' ');
             std::replace(begin(this->industry), end(this->industry)-1, '\0', ' ');
+
         }
 
         //Utility

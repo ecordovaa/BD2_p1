@@ -12,7 +12,7 @@
 11  Francoise Bettencourt Meyers                      83.90 France                        Consumer                      0     12
 12  Amancio Ortega                                    79.30 Spain                         Retail                        0     13
 13  Mukesh Ambani                                     74.10 India                         Energy                        0     14
-14  Charles Koch                                      64.30 United States                 Industrial                    0     15
+14  Charles Koch                                      64.45 United States                 Industrial                    0     15
 15  Julia Flesher Koch & Family                       64.30 United States                 Industrial                    0     16
 16  Zhong Shanshan                                    63.80 China                         Diversified                   0     17
 17  Gautam Adani                                      62.80 India                         Industrial                    0     18

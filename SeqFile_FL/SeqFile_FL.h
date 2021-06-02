@@ -3,21 +3,22 @@
 #include "billionaries.h"
 
 int regSize = sizeof(Billio)-7;
-int filesizemain = 30;
+
 
 class SeqFile {
 private:
-
+    int filesizemain = 30;
     string filename {};
     string aux {};
     void buildFile();
     bool binarySearch(float key, ifstream &stream, Billio & billionary);
     
-    size_t fileSize = filesizemain;
+    
     size_t maxaux = 10;
     
 public:
     size_t sizeaux = 0;
+    size_t fileSize = filesizemain;
     explicit SeqFile(string file): filename("data/"+ file + ".txt") {cout<<"Se guardo el archivo"<<endl;};
     pair<bool,Billio> searchmain(float key);
     pair<bool,Billio> searchaux(float key);
@@ -40,7 +41,7 @@ pair<bool,Billio> SeqFile::searchmain(float key) {
     // binarysearch en el main;
     // 
     bool i = binarySearch(key, db, billionary);
-
+    db.close();
     return make_pair(i,billionary);  //
 
 }
@@ -62,7 +63,7 @@ pair<bool,Billio> SeqFile::searchaux(float key) {
     
     while (cont < sizeaux)
     {
-        db.seekg(9  + (filesizemain + (cont))*(regSize+1), ios::beg);
+        db.seekg(9  + (this->filesizemain + (cont))*(regSize+1), ios::beg);
 
         billion.readBillio(db);
 
@@ -79,6 +80,7 @@ pair<bool,Billio> SeqFile::searchaux(float key) {
         db.seekg(9  + (vtemp[0]-1)*(regSize+1), ios::beg);
         billion.readBillio(db);
         btemp = ( key == billion.getBillions()) ? true:false;
+        db.close();
         return make_pair(btemp,billion);
     }
     else
@@ -96,19 +98,25 @@ pair<bool,Billio> SeqFile::searchaux(float key) {
                 idmax = billion.getId();
                 keymax =  billion.getBillions(); 
             }
-            if(key == billion.getBillions()) return make_pair(true, billion);
+            if(key == billion.getBillions())
+            {
+                db.close();
+                return make_pair(true, billion);
+            }
 
         }
         if ( keymax < key)
         {
             db.seekg(9  + (idmax-1)*(regSize+1), ios::beg);
             billion.readBillio(db);
+            db.close();
             return make_pair(false, billion);
         }
         else
         {
             db.seekg(9  + (idmin-1)*(regSize+1), ios::beg);
             billion.readBillio(db);
+            db.close();
             return make_pair(false, billion);
         } 
     }
@@ -131,13 +139,15 @@ pair<bool,Billio> SeqFile::search(float key)
         // cout<<sizeaux<<endl;
 
         s_a = this->searchaux(key);
-
+        // s_m.second.toString();
         //-
-        if( s_m.second.getBillions() < key )  // 500
+        if( s_m.second.getBillions() < key || s_a.second.getBillions() < key)  // 500
         {
             return (s_m.second.getBillions() > s_a.second.getBillions()) ? 
                         s_m : s_a;
         }
+        
+        // if(s_m.second.getBillions()>s_a.second.getBillions())
 
         //-
         return (s_m.second.getBillions() > s_a.second.getBillions()) ? 
@@ -172,7 +182,7 @@ vector<Billio> SeqFile::searchBetween(float left, float right) {
             break;
         }
     }
-
+    stream.close();
     return out;
 }
 
@@ -226,6 +236,9 @@ void SeqFile::sortd()
     }
 
     filesizemain = this->fileSize = sorted.size();
+    this->sizeaux = 0; 
+    cout<<endl<<"Se llego a un maximo de records en el auxiliar"<<endl;
+    cout<<"New Data have " << fileSize<< " records in main and " <<sizeaux <<" records in aux."<<endl<<endl;
     overdb.close();
 }
 
@@ -249,9 +262,8 @@ void SeqFile::adding(Billio add) {
         if(maxaux==sizeaux) 
         {
             this->sortd(); //mergeo
-            this->sizeaux = 0; 
-            this->adding(add);
             db.close();
+            this->adding(add);
             return;
         }
         Billio billion = search_a.second;
@@ -331,7 +343,7 @@ void SeqFile::adding(Billio add) {
         billion.toString();
 
         */
-        
+        // billion.toString();
         if(billion.getId()==firstB().getId()  && billion.getBillions() < add.getBillions())
         {
             cout<<" cambiando el primero"<<endl;
@@ -349,6 +361,7 @@ void SeqFile::adding(Billio add) {
             db<<add.nombre<<add.billions<<add.country;
             db<<add.industry<<add.state<<add.next;
             db<<endl;
+            db.close();
             // fileSize++;
             sizeaux++;
             return;
@@ -365,6 +378,7 @@ void SeqFile::adding(Billio add) {
             db<<add.id<<add.nombre<<add.billions<<add.country;
             db<<add.industry<<add.state<<add.next;
             db<<endl;
+            db.close();
             // fileSize++;
             sizeaux++;
             return;
@@ -590,6 +604,7 @@ void SeqFile::midsearch() {
 
     billionary.readBillio(stream);
     billionary.toString();
+    stream.close();
     
 }
 Billio SeqFile::firstB()
