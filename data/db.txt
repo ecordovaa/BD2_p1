@@ -1,0 +1,500 @@
+-1     1
+Jeff Bezos                                        187.80United States                 Technology                    0      2
+Elon Musk                                         187.70United States                 Technology                    0      3
+Bernard Arnault                                   187.60France                        Consumer                      0      4
+Bill Gates                                        187.50United States                 Technology                    0      5
+Mark Zuckerberg                                   187.40United States                 Technology                    0      6
+Warren Buffett                                    187.30United States                 Diversified                   0      7
+Larry Page                                        187.20United States                 Technology                    0      8
+Sergey Brin                                       187.10United States                 Technology                    0      9
+Larry Ellison                                     187.00United States                 Technology                    0     10
+Steve Ballmer                                     186.90United States                 Technology                    0     11
+Francoise Bettencourt Meyers                      186.80France                        Consumer                      0     12
+Amancio Ortega                                    186.70Spain                         Retail                        0     13
+Mukesh Ambani                                     186.60India                         Energy                        0     14
+Charles Koch                                      186.50United States                 Industrial                    0     15
+Julia Flesher Koch & Family                       186.40United States                 Industrial                    0     16
+Zhong Shanshan                                    186.30China                         Diversified                   0     17
+Gautam Adani                                      186.20India                         Industrial                    0     18
+Jim Walton                                        186.10United States                 Retail                        0     19
+Rob Walton                                        186.00United States                 Retail                        0     20
+Alice Walton                                      185.90United States                 Retail                        0     21
+Ma Huateng                                        185.80China                         Technology                    0     22
+MacKenzie Scott                                   185.70United States                 Technology                    0     23
+Carlos Slim                                       185.60Mexico                        Diversified                   0     24
+Francois Pinault                                  185.50France                        Consumer                      0     25
+Phil Knight & Family                              185.40United States                 Consumer                      0     26
+Michael Dell                                      185.30United States                 Technology                    0     27
+Jack Ma                                           185.20China                         Technology                    0     28
+Jacqueline Badger Mars                            185.10United States                 Food & Beverage               0     29
+John Mars                                         185.00United States                 Food & Beverage               0     30
+Zhang Yiming                                      184.90China                         Technology                    0     31
+Colin Huang                                       184.80China                         Technology                    0     32
+Alain Wertheimer                                  184.70France                        Consumer                      0     33
+Gerard Wertheimer                                 184.60France                        Consumer                      0     34
+Tadashi Yanai                                     184.50Japan                         Retail                        0     35
+Len Blavatnik                                     184.40United States                 Diversified                   0     36
+Giovanni Ferrero & Family                         184.30Italy                         Food & Beverage               0     37
+Miriam Adelson                                    184.20United States                 Entertainment                 0     38
+Klaus-Michael Kuehne                              184.10Germany                       Industrial                    0     39
+Masayoshi Son                                     184.00Japan                         Technology                    0     40
+William Ding                                      183.90China                         Technology                    0     41
+Vladimir Potanin                                  183.80Russia                        Commodities                   0     42
+Li Ka-shing                                       183.70Hong Kong                     Real-Estate                   0     43
+Zeng Yuqun                                        183.60Hong Kong                     Industrial                    0     44
+Yang Huiyan                                       183.50China                         Real-Estate                   0     45
+Azim Premji                                       183.40India                         Technology                    0     46
+He Xiangjian                                      183.30China                         Consumer                      0     47
+Gina Rinehart                                     183.20Australia                     Commodities                   0     48
+Leonard Lauder                                    183.10United States                 Consumer                      0     49
+Dan Gilbert                                       183.00United States                 Real-Estate                   0     50
+Qin Yinglin                                       182.90China                         Food & Beverage               0     51
+James Dyson                                       182.80United Kingdom                Consumer                      0     52
+Vladimir Lisin                                    182.70Russia                        Industrial                    0     53
+Jim Ratcliffe                                     182.60United Kingdom                Industrial                    0     54
+Alexey Mordashov                                  182.50Russia                        Industrial                    0     55
+Leonid Mikhelson                                  182.40Russia                        Energy                        0     56
+Takemitsu Takizaki                                182.30Japan                         Technology                    0     57
+Stephen Schwarzman                                182.20United States                 Finance                       0     58
+Pallonji Mistry                                   182.10Ireland                       Industrial                    0     59
+Pang Kang                                         182.00China                         Food & Beverage               0     60
+Leonardo Del Vecchio                              181.90Italy                         Consumer                      0     61
+Dieter Schwarz                                    181.80Germany                       Retail                        0     62
+Abigail Johnson                                   181.70United States                 Finance                       0     63
+Jiang Rensheng                                    181.60China                         Health Care                   0     64
+Iris Fontbona & Family                            181.50Chile                         Commodities                   0     65
+Jorge Paulo Lemann'                               181.40Brazil                        Food & Beverage               0     66
+Susanne Klatten                                   181.30Germany                       Industrial                    0     67
+Zhang Zhidong                                     181.20China                         Technology                    0     68
+James Simons                                      181.10United States                 Finance                       0     69
+Stefan Persson                                    181.00Sweden                        Retail                        0     70
+Andrew Forrest                                    180.90Australia                     Commodities                   0     71
+Li Xiting                                         180.80Singapore                     Health Care                   0     72
+Lei Jun                                           180.70China                         Technology                    0     73
+Lee Shau Kee                                      180.60Hong Kong                     Real-Estate                   0     74
+Eric Schmidt                                      180.50United States                 Technology                    0     75
+Shiv Nadar                                        180.40India                         Technology                    0     76
+Henry Cheng                                       180.30Hong Kong                     Retail                        0     77
+Ken Griffin                                       180.20United States                 Finance                       0     78
+Carl Icahn                                        180.10United States                 Diversified                   0     79
+Elaine Marshall                                   180.00United States                 Industrial                    0     80
+Laurene Powell Jobs                               179.90United States                 Media & Telecom               0     81
+John Menard                                       179.80United States                 Retail                        0     82
+Goh Cheng Liang                                   179.70Singapore                     Industrial                    0     83
+Thomas Peterffy                                   179.60United States                 Finance                       0     84
+Stefan Quandt                                     179.50Germany                       Industrial                    0     85
+Sara Mota de Larrea & Family                      179.40Mexico                        Commodities                   0     86
+Alisher Usmanov                                   179.30Russia                        Diversified                   0     87
+Lakshmi Mittal                                    179.20India                         Retail                        0     88
+Robert Kuok                                       179.10Malaysia                      Diversified                   0     89
+Lukas Walton                                      179.00United States                 Retail                        0     90
+Ernesto Bertarelli & Family                       178.90Switzerland                   Diversified                   0     91
+Hui Ka Yan                                        178.80China                         Real-Estate                   0     92
+Peter Woo                                         178.70Hong Kong                     Real-Estate                   0     93
+Donald Newhouse                                   178.60United States                 Media & Telecom               0     94
+Chen Bang                                         178.50China                         Health Care                   0     95
+Xu Hang                                           178.40Hong Kong                     Health Care                   0     96
+Vagit Alekperov                                   178.30Russia                        Energy                        0     97
+Lui Che-Woo                                       178.20Hong Kong                     Entertainment                 0     98
+Roman Abramovich                                  178.10Russia                        Diversified                   0     99
+Thomas Frist                                      178.00United States                 Health Care                   0    100
+Gennady Timchenko                                 177.90Russia                        Diversified                   0    101
+Wang Xing                                         177.80China                         Technology                    0    102
+Dietrich Mateschitz                               177.70Austria                       Food & Beverage               0    103
+Wang Wei                                          177.60China                         Services                      0    104
+Dustin Moskovitz                                  177.50United States                 Technology                    0    105
+Lee Man Tat                                       177.40Hong Kong                     Food & Beverage               0    106
+Charlene de Carvalho-Heineken                     177.30Netherlands                   Food & Beverage               0    107
+Andrey Melnichenko                                177.20Russia                        Industrial                    0    108
+Viktor Vekselberg                                 177.10Russia                        Industrial                    0    109
+Ray Dalio                                         177.00United States                 Finance                       0    110
+Reinhold Wuerth                                   176.90Germany                       Industrial                    0    111
+Thomas Struengmann                                176.80Germany                       Health Care                   0    112
+Andreas Struengmann                               176.70Germany                       Health Care                   0    113
+Alwaleed Bin Talal                                176.60Saudi Arabia                  Diversified                   0    114
+Eduardo Saverin                                   176.50Brazil                        Technology                    0    115
+Wu Yajun                                          176.40China                         Real-Estate                   0    116
+Zhong Huijuan                                     176.30China                         Health Care                   0    117
+Sun Piaoyang                                      176.20China                         Health Care                   0    118
+Gustaf Douglas & Family                           176.10Sweden                        Diversified                   0    119
+Aliko Dangote                                     176.00Nigeria                       Industrial                    0    120
+Richard Liu                                       175.90China                         Technology                    0    121
+Li Shu Fu                                         175.80China                         Industrial                    0    122
+Cyrus Poonawalla                                  175.70India                         Health Care                   0    123
+Budi Hartono                                      175.60Indonesia                     Diversified                   0    124
+Hasso Plattner                                    175.50Germany                       Technology                    0    125
+Wang Wenyin                                       175.40China                         Commodities                   0    126
+Ernie Garcia                                      175.30United States                 Consumer                      0    127
+Ned Johnson III                                   175.20United States                 Finance                       0    128
+Charoen Sirivadhanabhakdi                         175.10Thailand                      Food & Beverage               0    129
+Donald Bren                                       175.00United States                 Real-Estate                   0    130
+Ricardo Salinas                                   174.90Mexico                        Diversified                   0    131
+Patrick Soon-Shiong                               174.80United States                 Health Care                   0    132
+Philip Anschutz                                   174.70United States                 Diversified                   0    133
+Radhakishan Damani                                174.60India                         Retail                        0    134
+Michael Hartono                                   174.50Indonesia                     Diversified                   0    135
+Ma Jianrong                                       174.40China                         Consumer                      0    136
+Jorge Moll & Family                               174.30Brazil                        Health Care                   0    137
+Charles Ergen                                     174.20United States                 Media & Telecom               0    138
+Dave Duffield                                     174.10United States                 Technology                    0    139
+Eric Yuan                                         174.00United States                 Technology                    0    140
+Uday Kotak                                        173.90India                         Finance                       0    141
+David Tepper                                      173.80United States                 Finance                       0    142
+Karl Albrecht Jr.                                 173.70Germany                       Retail                        0    143
+Beate Heister                                     173.60Germany                       Retail                        0    144
+Zuo Hui                                           173.50China                         Real-Estate                   0    145
+Jim Goodnight                                     173.40United States                 Technology                    0    146
+Patrick Drahi                                     173.30France                        Media & Telecom               0    147
+Su Hua                                            173.20China                         Technology                    0    148
+Huang Shilin                                      173.10China                         Industrial                    0    149
+Scott Farquhar                                    173.00Australia                     Technology                    0    150
+Mike Cannon-Brookes                               172.90Australia                     Technology                    0    151
+Mikhail Fridman                                   172.80Russia                        Diversified                   0    152
+Robin Li                                          172.70China                         Technology                    0    153
+Chen Zhiping                                      172.60China                         Consumer                      0    154
+Mikhail Prokhorov                                 172.50Russia                        Diversified                   0    155
+Jensen Huang                                      172.40United States                 Technology                    0    156
+Fan Hongwei                                       172.30China                         Energy                        0    157
+Jim Davis                                         172.20United States                 Consumer                      0    158
+Joseph Tsai                                       172.10Canada                        Technology                    0    159
+Hugh Grosvenor                                    172.00United Kingdom                Real-Estate                   0    160
+Alejandro Santo Domingo & Family                  171.90Colombia                      Food & Beverage               0    161
+Cen Junda                                         171.80China                         Health Care                   0    162
+Jan Koum                                          171.70United States                 Technology                    0    163
+Wang Jianlin                                      171.60China                         Real-Estate                   0    164
+Zhou Qunfei                                       171.50China                         Technology                    0    165
+Victor Rashnikov                                  171.40Russia                        Industrial                    0    166
+Raymond Kwok                                      171.30Hong Kong                     Real-Estate                   0    167
+Forrest Li                                        171.20Singapore                     Technology                    0    168
+Sherry Brydson                                    171.10Canada                        Media & Telecom               0    169
+Dang Yanbao                                       171.00China                         Energy                        0    170
+Lee Jae-Yong & Family                             170.90Korea                         Diversified                   0    171
+Paolo Rocca  & Family                             170.80Italy                         Commodities                   0    172
+Wu Shaoxun                                        170.70China                         Food & Beverage               0    173
+Wang Chuan-Fu                                     170.60China                         Consumer                      0    174
+Carl Cook                                         170.50United States                 Health Care                   0    175
+Jack Dorsey                                       170.40United States                 Technology                    0    176
+Robert Pera                                       170.30United States                 Technology                    0    177
+Leng You-Bin                                      170.20China                         Consumer                      0    178
+Melker Schorling                                  170.10Sweden                        Diversified                   0    179
+Charles Schwab                                    170.00United States                 Finance                       0    180
+Brian Chesky                                      169.90United States                 Services                      0    181
+Marcel Telles                                     169.80Brazil                        Food & Beverage               0    182
+Thomas Kwok                                       169.70Hong Kong                     Real-Estate                   0    183
+Dilip Shanghvi                                    169.60India                         Health Care                   0    184
+Pierre Omidyar                                    169.50United States                 Technology                    0    185
+Savitri Jindal                                    169.40India                         Commodities                   0    186
+Gong Hongjia                                      169.30China                         Technology                    0    187
+Brian Armstrong                                   169.20United States                 Technology                    0    188
+Liu Yongxing                                      169.10China                         Industrial                    0    189
+Patrick Collison                                  169.00Ireland                       Technology                    0    190
+John Collison                                     168.90Ireland                       Technology                    0    191
+Harry Triguboff                                   168.80Australia                     Real-Estate                   0    192
+Gordon Moore                                      168.70United States                 Technology                    0    193
+Micky Arison                                      168.60United States                 Entertainment                 0    194
+Cheng Yixiao                                      168.50China                         Technology                    0    195
+Marijke Mars                                      168.40United States                 Food & Beverage               0    196
+Victoria Mars                                     168.30United States                 Food & Beverage               0    197
+Pamela Mars-Wright                                168.20United States                 Food & Beverage               0    198
+Valerie Mars                                      168.10United States                 Food & Beverage               0    199
+Eyal Ofer                                         168.00Israel                        Services                      0    200
+Stefano Pessina                                   167.90Monaco                        Retail                        0    201
+Heinrich Deichmann & Family                       167.80Germany                       Retail                        0    202
+David Sun                                         167.70United States                 Technology                    0    203
+John Tu                                           167.60United States                 Technology                    0    204
+Anders Holch Povlsen & Family                     167.50Denmark                       Retail                        0    205
+Bobby Murphy                                      167.40United States                 Technology                    0    206
+Graeme Hart                                       167.30New Zealand                   Finance                       0    207
+Leon Black                                        167.20United States                 Finance                       0    208
+David Geffen                                      167.10United States                 Entertainment                 0    209
+Steve Cohen                                       167.00United States                 Finance                       0    210
+Dmitry Rybolovlev                                 166.90Russia                        Diversified                   0    211
+Ding Shizhong                                     166.80China                         Consumer                      0    212
+Emmanuel Besnier                                  166.70France                        Food & Beverage               0    213
+Liu Yonghao                                       166.60China                         Diversified                   0    214
+Wei Jianjun                                       166.50China                         Consumer                      0    215
+Reinhold Schmieding                               166.40United States                 Health Care                   0    216
+Carlos Sicupira                                   166.30Brazil                        Food & Beverage               0    217
+Frank Wang                                        166.20China                         Technology                    0    218
+Li Shuirong                                       166.10China                         Energy                        0    219
+Pham Nhat Vuong                                   166.00Viet Nam                      Real-Estate                   0    220
+Michael Kadoorie                                  165.90Hong Kong                     Energy                        0    221
+Ding Shijia                                       165.80China                         Consumer                      0    222
+Seo Jung-Jin                                      165.70Korea                         Health Care                   0    223
+Stan Druckenmiller                                165.60United States                 Finance                       0    224
+Kumar Birla                                       165.50India                         Industrial                    0    225
+Kim Jung-Ju                                       165.40Korea                         Technology                    0    226
+Georg Schaeffler                                  165.30Germany                       Industrial                    0    227
+Rinat Akhmetov                                    165.20Ukraine                       Industrial                    0    228
+Blair Parry-Okeden                                165.10United States                 Media & Telecom               0    229
+Jim Kennedy                                       165.00United States                 Media & Telecom               0    230
+Suleiman Kerimov                                  164.90Russia                        Commodities                   0    231
+Brian Kim                                         164.80Korea                         Technology                    0    232
+Shu Ping                                          164.70Singapore                     Food & Beverage               0    233
+Evan Spiegel                                      164.60United States                 Technology                    0    234
+Michael Platt                                     164.50United Kingdom                Finance                       0    235
+Qi Shi                                            164.40China                         Finance                       0    236
+Zhang Yong                                        164.30Singapore                     Food & Beverage               0    237
+Jay Chaudhry                                      164.20United States                 Technology                    0    238
+Anthony Pratt                                     164.10Australia                     Industrial                    0    239
+Johann Graf                                       164.00Austria                       Entertainment                 0    240
+Dietmar Hopp                                      163.90Germany                       Technology                    0    241
+Michael Otto                                      163.80Germany                       Retail                        0    242
+Antonia Axson Johnson                             163.70Sweden                        Industrial                    0    243
+George Roberts                                    163.60United States                 Finance                       0    244
+Nathan Blecharczyk                                163.50United States                 Services                      0    245
+Joe Gebbia                                        163.40United States                 Services                      0    246
+Gianluigi Aponte                                  163.30Switzerland                   Services                      0    247
+John Fredriksen                                   163.20Cyprus                        Industrial                    0    248
+Yao Liangsong                                     163.10China                         Retail                        0    249
+Giorgio Armani                                    163.00Italy                         Consumer                      0    250
+Sarath Ratanavadi                                 162.90Thailand                      Energy                        0    251
+Henry Kravis                                      162.80United States                 Finance                       0    252
+Christy Walton                                    162.70United States                 Retail                        0    253
+Luis Sarmiento                                    162.60Colombia                      Finance                       0    254
+Cai Kui                                           162.50China                         Real-Estate                   0    255
+Stan Kroenke                                      162.40United States                 Real-Estate                   0    256
+Niels Louis-Hansen                                162.30Denmark                       Health Care                   0    257
+Les Wexner                                        162.20United States                 Retail                        0    258
+Sunil Mittal                                      162.10India                         Media & Telecom               0    259
+Tobi Lutke                                        162.00Canada                        Technology                    0    260
+Alberto Bailleres                                 161.90Mexico                        Commodities                   0    261
+Tito Beveridge                                    161.80United States                 Consumer                      0    262
+Anthony Bamford & Family                          161.70United Kingdom                Industrial                    0    263
+Tim Sweeney                                       161.60United States                 Technology                    0    264
+Zhao Yan                                          161.50China                         Health Care                   0    265
+Jorn Rausing                                      161.40Sweden                        Services                      0    266
+Zhang Bangxin                                     161.30China                         Services                      0    267
+August von Finck                                  161.20Germany                       Diversified                   0    268
+Andy Beal                                         161.10United States                 Finance                       0    269
+George Lucas                                      161.00United States                 Entertainment                 0    270
+German Khan                                       160.90Russia                        Diversified                   0    271
+Wee Cho Yaw                                       160.80Singapore                     Finance                       0    272
+Denise Coates                                     160.70United Kingdom                Entertainment                 0    273
+Alexander Abramov                                 160.60Russia                        Industrial                    0    274
+Qian Dongqi                                       160.50China                         Technology                    0    275
+Harold Hamm                                       160.40United States                 Energy                        0    276
+Iskandar Makhmudov                                160.30Russia                        Commodities                   0    277
+John Malone                                       160.20United States                 Media & Telecom               0    278
+Hansjoerg Wyss                                    160.10Switzerland                   Health Care                   0    279
+Rupert Murdoch                                    160.00United States                 Media & Telecom               0    280
+James Pattison                                    159.90Canada                        Media & Telecom               0    281
+Jude Reyes                                        159.80United States                 Consumer                      0    282
+Chris Reyes                                       159.70United States                 Consumer                      0    283
+Tatyana Bakalchuk                                 159.60Russia                        Technology                    0    284
+Gabe Newell                                       159.50United States                 Technology                    0    285
+Andrew Currie                                     159.40United Kingdom                Industrial                    0    286
+Johann Rupert & Family                            159.30South Africa                  Diversified                   0    287
+Silvio Berlusconi                                 159.20Italy                         Media & Telecom               0    288
+John Reece                                        159.10United Kingdom                Industrial                    0    289
+Cheng Xue                                         159.00China                         Food & Beverage               0    290
+Willi Liebherr                                    158.90Germany                       Industrial                    0    291
+Isolde Liebherr                                   158.80Germany                       Industrial                    0    292
+John Albert Sobrato                               158.70United States                 Real-Estate                   0    293
+Marc Benioff                                      158.60United States                 Technology                    0    294
+Denis Sverdlov                                    158.50Russia                        Technology                    0    295
+Li Zhenguo                                        158.40China                         Energy                        0    296
+Sandra Ortega Mera                                158.30Spain                         Retail                        0    297
+Hui Wing Mau                                      158.20Hong Kong                     Real-Estate                   0    298
+Liu Jincheng                                      158.10China                         Industrial                    0    299
+Theo Albrecht Jr.                                 158.00Germany                       Retail                        0    300
+Dennis Washington                                 157.90United States                 Industrial                    0    301
+Stephen Ross                                      157.80United States                 Real-Estate                   0    302
+Lin Bin                                           157.70United States                 Technology                    0    303
+Mohammed Al Amoudi                                157.60Saudi Arabia                  Energy                        0    304
+Robert Smith                                      157.50United States                 Finance                       0    305
+Rocco Commisso                                    157.40United States                 Media & Telecom               0    306
+Benu Bangur                                       157.30India                         Commodities                   0    307
+German Larrea                                     157.20Mexico                        Commodities                   0    308
+Anthony von Mandl                                 157.10Canda                         Consumer                      0    309
+Shigenobu Nagamori                                157.00Japan                         Industrial                    0    310
+Lu Zhongfang                                      156.90China                         Services                      0    311
+Jerry Jones                                       156.80United States                 Entertainment                 0    312
+Pei Zhenhua                                       156.70China                         Industrial                    0    313
+Sun Hongbin                                       156.60United States                 Real-Estate                   0    314
+Ugur Sahin                                        156.50Germany                       Health Care                   0    315
+Joseph Lau                                        156.40Hong Kong                     Real-Estate                   0    316
+Xu Shihui                                         156.30China                         Food & Beverage               0    317
+Li Ge                                             156.20United States                 Health Care                   0    318
+Ned Johnson IV                                    156.10United States                 Finance                       0    319
+Elizabeth Johnson                                 156.00United States                 Finance                       0    320
+Alexander Otto                                    155.90Germany                       Real-Estate                   0    321
+Ruan Xueping                                      155.80China                         Industrial                    0    322
+Ruan Liping                                       155.70China                         Industrial                    0    323
+Daniel Dines                                      155.60Romania                       Technology                    0    324
+Carl Bennet                                       155.50Sweden                        Finance                       0    325
+Izzy Englander                                    155.40United States                 Finance                       0    326
+Magdalena Martullo                                155.30Switzerland                   Industrial                    0    327
+Laurent Dassault                                  155.20France                        Diversified                   0    328
+Marie-Helene Habert-Dassault                      155.10France                        Diversified                   0    329
+Thierry Dassault                                  155.00France                        Diversified                   0    330
+Ralph Lauren                                      154.90United States                 Consumer                      0    331
+Richard Kinder                                    154.80United States                 Energy                        0    332
+Kei Hoi Pang                                      154.70China                         Real-Estate                   0    333
+Juan Beckmann Vidal & Family                      154.60Mexico                        Food & Beverage               0    334
+Shahid Khan                                       154.50United States                 Consumer                      0    335
+Yu Renrong                                        154.40China                         Technology                    0    336
+Mat Ishbia                                        154.30United States                 Finance                       0    337
+Rahel Blocher                                     154.20Switzerland                   Industrial                    0    338
+Ludwig Merckle                                    154.10Germany                       Industrial                    0    339
+Chen Jianhua                                      154.00China                         Industrial                    0    340
+Frank Lowy                                        153.90Australia                     Real-Estate                   0    341
+Nicky Oppenheimer                                 153.80South Africa                  Diversified                   0    342
+David Thomson                                     153.70Canada                        Media & Telecom               0    343
+Taylor Thomson                                    153.60Canada                        Media & Telecom               0    344
+Peter Thomson                                     153.50Canada                        Media & Telecom               0    345
+Bob Rich                                          153.40United States                 Food & Beverage               0    346
+Leonid Fedun                                      153.30Russia                        Energy                        0    347
+Nusli Wadia                                       153.20India                         Diversified                   0    348
+Geoffrey Kwok                                     153.10Hong Kong                     Real-Estate                   0    349
+Finn Rausing                                      153.00Sweden                        Services                      0    350
+Kirsten Rausing                                   152.90Sweden                        Services                      0    351
+George Soros                                      152.80United States                 Finance                       0    352
+Steven Spielberg                                  152.70United States                 Entertainment                 0    353
+Charles Cadogan                                   152.60United Kingdom                Real-Estate                   0    354
+Liu Hanyuan                                       152.50China                         Industrial                    0    355
+Liz Mohn                                          152.40Germany                       Media & Telecom               0    356
+Ronda Stryker                                     152.30United States                 Health Care                   0    357
+Yu Yong                                           152.20China                         Finance                       0    358
+Chase Coleman                                     152.10United States                 Finance                       0    359
+Andy Bechtolsheim                                 152.00Germany                       Technology                    0    360
+Hong Ra-hee                                       151.90Korea                         Diversified                   0    361
+Tammy Gustavson                                   151.80United States                 Services                      0    362
+Lin Jianhua                                       151.70China                         Technology                    0    363
+Martin Viessmann & Family                         151.60Germany                       Industrial                    0    364
+Frederik Paulsen                                  151.50Sweden                        Health Care                   0    365
+Laurence Graff                                    151.40United Kingdom                Consumer                      0    366
+Takahisa Takahara                                 151.30Japan                         Consumer                      0    367
+John Grayken                                      151.20Ireland                       Finance                       0    368
+Gang Ye                                           151.10Singapore                     Technology                    0    369
+Samuel Yin                                        151.00Taiwan                        Diversified                   0    370
+Wang Laisheng                                     150.90China                         Industrial                    0    371
+Sri Prakash Lohia                                 150.80Indonesia                     Industrial                    0    372
+Axel Oberwelland                                  150.70Germany                       Food & Beverage               0    373
+Mohamed Al Jaber                                  150.60Saudi Arabia                  Retail                        0    374
+Gwendolyn Sontheim Meyer                          150.50United States                 Commodities                   0    375
+Pauline Keinath                                   150.40United States                 Commodities                   0    376
+Tom Gores                                         150.30United States                 Finance                       0    377
+Hiroshi Mikitani                                  150.20Japan                         Retail                        0    378
+Jian Jun                                          150.10China                         Consumer                      0    379
+Teh Hong Piow                                     150.00Malaysia                      Finance                       0    380
+Terry Pegula                                      149.90United States                 Energy                        0    381
+Alexey Kuzmichev                                  149.80Russia                        Diversified                   0    382
+John Sall                                         149.70United States                 Technology                    0    383
+Antti Herlin                                      149.60Finland                       Industrial                    0    384
+Chris Hohn                                        149.50United Kingdom                Finance                       0    385
+David Shaw                                        149.40United States                 Finance                       0    386
+Nassef Sawiris                                    149.30Egypt                         Industrial                    0    387
+Alain Merieux                                     149.20France                        Health Care                   0    388
+Natie Kirsh                                       149.10South Africa                  Food & Beverage               0    389
+Kenneth Dart                                      149.00Cayman Islands                Finance                       0    390
+Horst Pudwill                                     148.90Hong Kong                     Consumer                      0    391
+Shari Arison                                      148.80Israel                        Diversified                   0    392
+Nancy Laurie                                      148.70United States                 Retail                        0    393
+Wang Yusuo                                        148.60China                         Energy                        0    394
+Tan Kim Choo                                      148.50Singapore                     Real-Estate                   0    395
+Stef Wertheimer                                   148.40Israel                        Diversified                   0    396
+Pankaj Patel                                      148.30India                         Health Care                   0    397
+Kjeld Kirk Kristiansen                            148.20Denmark                       Consumer                      0    398
+Ray Hunt                                          148.10United States                 Energy                        0    399
+Margaretta Taylor                                 148.00United States                 Media & Telecom               0    400
+James Cox Chambers                                147.90United States                 Media & Telecom               0    401
+Katharine Rayner                                  147.80United States                 Media & Telecom               0    402
+Fredrik Lundberg                                  147.70Sweden                        Real-Estate                   0    403
+Chu Mang Yee                                      147.60China                         Real-Estate                   0    404
+Ernest Garcia III                                 147.50United States                 Consumer                      0    405
+Bertil Hult                                       147.40Sweden                        Diversified                   0    406
+Eric Smidt                                        147.30United States                 Retail                        0    407
+Vincent Bollore                                   147.20France                        Diversified                   0    408
+Joe Lewis                                         147.10United Kingdom                Diversified                   0    409
+Josh Harris                                       147.00United States                 Finance                       0    410
+J K Irving                                        146.90Canada                        Commodities                   0    411
+Ronald McAulay                                    146.80Hong Kong                     Energy                        0    412
+Jean-Michel Besnier                               146.70France                        Food & Beverage               0    413
+Randa Williams                                    146.60United States                 Energy                        0    414
+Dannine Avara                                     146.50United States                 Energy                        0    415
+Scott Duncan                                      146.40United States                 Energy                        0    416
+Milane Frantz                                     146.30United States                 Energy                        0    417
+Sofie Kirk Kristiansen                            146.20Denmark                       Consumer                      0    418
+Agnete Kirk Thinggaard                            146.10Denmark                       Consumer                      0    419
+Thomas Kirk Kristiansen                           146.00Denmark                       Consumer                      0    420
+Wang Laichun                                      145.90China                         Industrial                    0    421
+Xavier Niel                                       145.80France                        Technology                    0    422
+Lynn Schusterman                                  145.70United States                 Energy                        0    423
+Lai Meisong                                       145.60China                         Services                      0    424
+Tom Morris                                        145.50United Kingdom                Retail                        0    425
+Yasumitsu Shigeta                                 145.40Japan                         Media & Telecom               0    426
+K P Singh                                         145.30India                         Real-Estate                   0    427
+Rahul Bajaj                                       145.20India                         Diversified                   0    428
+Simon Reuben                                      145.10United Kingdom                Diversified                   0    429
+David Reuben                                      145.00United Kingdom                Diversified                   0    430
+Leaf Hua Li                                       144.90China                         Technology                    0    431
+George Kaiser                                     144.80United States                 Energy                        0    432
+Bom Kim                                           144.70United States                 Technology                    0    433
+Andrey Guryev                                     144.60Russia                        Industrial                    0    434
+Chung Mong-Koo                                    144.50Korea                         Industrial                    0    435
+Jean-Pierre Cayard                                144.40France                        Food & Beverage               0    436
+Peter Thiel                                       144.30United States                 Finance                       0    437
+Jane Lauder                                       144.20United States                 Consumer                      0    438
+Udo Tschira                                       144.10Germany                       Technology                    0    439
+Harald Tschira                                    144.00Germany                       Technology                    0    440
+Lv Xiang-yang                                     143.90China                         Consumer                      0    441
+Bubba Cathy                                       143.80United States                 Food & Beverage               0    442
+Ivan Glasenberg                                   143.70Australia                     Commodities                   0    443
+Dan Cathy                                         143.60United States                 Food & Beverage               0    444
+Andre Hoffmann                                    143.50Switzerland                   Health Care                   0    445
+Philip Ng                                         143.40Singapore                     Real-Estate                   0    446
+Petr Aven                                         143.30Russia                        Diversified                   0    447
+Mark Shoen                                        143.20United States                 Services                      0    448
+Robert Ng                                         143.10Singapore                     Real-Estate                   0    449
+Tsai Eng-Meng                                     143.00Taiwan                        Food & Beverage               0    450
+Isaac Perlmutter                                  142.90United States                 Entertainment                 0    451
+Linda Campbell                                    142.80Canada                        Media & Telecom               0    452
+Gaye Farncombe                                    142.70Canada                        Media & Telecom               0    453
+Michael Herz & Family                             142.60Germany                       Consumer                      0    454
+Olav Thon                                         142.50Norway                        Real-Estate                   0    455
+Barry Lam                                         142.40Taiwan                        Technology                    0    456
+Robert Rowling                                    142.30United States                 Energy                        0    457
+Barry Diller                                      142.20United States                 Technology                    0    458
+Wolfgang Herz & Family                            142.10Germany                       Consumer                      0    459
+Leonard Stern                                     142.00United States                 Real-Estate                   0    460
+Wang Wenjing                                      141.90China                         Technology                    0    461
+Manuel Villar                                     141.80Philippines                   Diversified                   0    462
+Charles Butt & Family                             141.70United States                 Retail                        0    463
+Anthony Wood                                      141.60United States                 Technology                    0    464
+Peter-Alexander Wacker & Family                   141.50Germany                       Industrial                    0    465
+Andreas Halvorsen                                 141.40Norway                        Finance                       0    466
+Terry Gou                                         141.30Taiwan                        Industrial                    0    467
+Robert Kraft                                      141.20United States                 Entertainment                 0    468
+Ann Kroenke                                       141.10United States                 Retail                        0    469
+Henry Samueli                                     141.00United States                 Technology                    0    470
+Frits Goldschmeding                               140.90Netherlands                   Retail                        0    471
+Arthur Irving                                     140.80Canada                        Energy                        0    472
+Andrey Kozitsyn                                   140.70Russia                        Industrial                    0    473
+Vera Michalski-Hoffmann                           140.60Switzerland                   Health Care                   0    474
+Maja Hoffmann                                     140.50Switzerland                   Health Care                   0    475
+Majid Al Futtaim                                  140.40United Arab Emirates          Real-Estate                   0    476
+Edward Roski                                      140.30United States                 Real-Estate                   0    477
+Zhang Lei                                         140.20China                         Finance                       0    478
+Charles Johnson                                   140.10United States                 Finance                       0    479
+Richard Branson                                   140.00United Kingdom                Diversified                   0    480
+Miuccia Prada                                     139.90Italy                         Consumer                      0    481
+Vivien Chen                                       139.80Hong Kong                     Real-Estate                   0    482
+Marcos Galperin                                   139.70Argentina                     Technology                    0    483
+Bidzina Ivanishvili                               139.60Georgia                       Diversified                   0    484
+Guenther Fielmann                                 139.50Germany                       Consumer                      0    485
+Patrizio Bertelli                                 139.40Italy                         Consumer                      0    486
+Pat Stryker                                       139.30United States                 Health Care                   0    487
+Francis Choi                                      139.20Hong Kong                     Real-Estate                   0    488
+Jeffery Hildebrand                                139.10United States                 Energy                        0    489
+Li Ping                                           139.00China                         Industrial                    0    490
+Chip Wilson                                       138.90Canada                        Retail                        0    491
+Marie Besnier Beauvalot                           138.80France                        Food & Beverage               0    492
+Clive Calder                                      138.70United Kingdom                Entertainment                 0    493
+Kwon Hyuk-Bin                                     138.60Korea                         Media & Telecom               0    494
+Mark Cuban                                        138.50United States                 Technology                    0    495
+Lino Saputo                                       138.40Canada                        Food & Beverage               0    496
+Prajogo Pangestu                                  138.30Indonesia                     Energy                        0    497
+Charles Dolan & Family                            138.20United States                 Media & Telecom               0    498
+Vladimir Kim                                      138.10Kazakhstan                    Commodities                   0    499
+Odd Reitan                                        128.00Norway                        Food & Beverage               0      0

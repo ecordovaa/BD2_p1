@@ -238,7 +238,7 @@ void SeqFile::sortd()
     filesizemain = this->fileSize = sorted.size();
     this->sizeaux = 0; 
     cout<<endl<<"Se llego a un maximo de records en el auxiliar"<<endl;
-    cout<<"New Data have " << fileSize<< " records in main and " <<sizeaux <<" records in aux."<<endl<<endl;
+    cout<<"New Data have " << fileSize<< " records in main and " <<sizeaux+1 <<" records in aux."<<endl<<endl;
     overdb.close();
 }
 
